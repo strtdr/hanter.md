@@ -489,6 +489,8 @@ export default defineConfig({
                   { type: 'string', name: 'title', label: 'Denumire', required: true },
                   { type: 'string', name: 'text', label: 'Descriere', ui: { component: 'textarea' } },
                   { type: 'image', name: 'image', label: 'Poză material real' },
+                  { type: 'image', name: 'sectionImage', label: 'Poză în secțiune (orizontal, fundal transparent)' },
+                  { type: 'number', name: 'thicknessCm', label: 'Grosime (cm), ex. 1.8' },
                 ],
               },
             ],

@@ -345,7 +345,7 @@ body.scrolled .navbtn{display:flex}
 .prot-info{display:grid;grid-template-columns:1fr;gap:16px}
 .pcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
 .pcard{margin:0;background:var(--surface);border-radius:10px;overflow:hidden;display:grid;align-content:start}
-.pcard img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.pcard > img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
 .pcard figcaption{padding:12px 14px;display:grid;gap:4px}
 .pcard figcaption b{font-size:15px}
 .pcard figcaption span{font-size:13px;color:var(--muted)}
@@ -353,3 +353,13 @@ body.scrolled .navbtn{display:flex}
 #protInfo .mimg{width:120px;height:90px;object-fit:cover;border-radius:6px;display:block}
 #protInfo > div{display:grid;gap:6px;min-width:0}
 @media (max-width:480px){#protInfo:has(.mimg){grid-template-columns:1fr}#protInfo .mimg{width:100%;height:auto;aspect-ratio:4/3}}
+
+/* Materialul în secțiune + rigla de grosime (înălțimea e proporțională cu grosimea reală) */
+.cut{display:flex;align-items:center;gap:10px;padding:16px 14px 4px;--u:40px}
+.cut img{flex:1;min-width:0;height:calc(var(--t) * var(--u));object-fit:cover;object-position:left center;aspect-ratio:auto}
+.cut .dim{display:flex;align-items:center;gap:6px;height:calc(var(--t) * var(--u));min-height:14px;flex:none}
+.cut .dim i{position:relative;width:10px;height:100%;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);box-sizing:border-box}
+.cut .dim i::before{content:"";position:absolute;left:4px;top:0;bottom:0;border-left:2px solid var(--ink)}
+.cut .dim b{font-family:var(--mono);font-size:13px;font-weight:600;white-space:nowrap}
+.pcards > .pcard{min-width:0}
+.cut img{width:0;flex:1 1 0}

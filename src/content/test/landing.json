@@ -89,17 +89,23 @@
       {
         "title": "Plastic cu fire tari",
         "text": "Universal pentru iarnă și vară, cel mai rezistent la uzură, se spală simplu cu apă cu presiune.",
-        "image": "/images/protection/fire-tari.jpg"
+        "image": "/images/protection/fire-tari.jpg",
+        "sectionImage": "/images/protection/fire-tari-sectiune.webp",
+        "thicknessCm": 0.5
       },
       {
         "title": "Plastic cu fire moi",
         "text": "Strânge foarte mult praf și gunoi între fire, universal pentru iarnă și vară, se spală ușor.",
-        "image": "/images/protection/fire-moi.jpg"
+        "image": "/images/protection/fire-moi.jpg",
+        "sectionImage": "/images/protection/fire-moi-sectiune.webp",
+        "thicknessCm": 1.6
       },
       {
-        "title": "Mochetă premium 1,8 mm",
+        "title": "Mochetă premium",
         "text": "Arată ca un covor de salon, cu aspect premium.",
-        "image": "/images/protection/mocheta.jpg"
+        "image": "/images/protection/mocheta.jpg",
+        "sectionImage": "/images/protection/mocheta-sectiune.webp",
+        "thicknessCm": 1.8
       }
     ]
   },

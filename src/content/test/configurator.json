@@ -311,7 +311,8 @@
         "Cel mai rezistent la uzură",
         "Strat de cauciuc: apa nu trece",
         "Universal pentru iarnă și vară",
-        "Se spală cu apă cu presiune"
+        "Se spală cu apă cu presiune",
+        "Subțire: 0,5 cm"
       ],
       "image": "/images/protection/fire-tari.jpg",
       "pricePerMeter": 1000,
@@ -355,7 +356,8 @@
         "Strânge foarte mult praf și gunoi",
         "Strat de cauciuc: apa nu trece",
         "Universal pentru iarnă și vară",
-        "Se spală ușor"
+        "Se spală ușor",
+        "Grosime: 1,6 cm"
       ],
       "image": "/images/protection/fire-moi.jpg",
       "pricePerMeter": 600,
@@ -380,13 +382,13 @@
     },
     {
       "id": "mocheta",
-      "name": "Mochetă premium 1,8 mm",
+      "name": "Mochetă premium",
       "desc": "Cu strat de cauciuc dedesubt, nu trece apa",
-      "details": "Mochetă premium de 1,8 mm, ca un covor de salon. Dedesubt are un strat de cauciuc, așa că apa și zăpada topită nu ajung la piele.",
+      "details": "Mochetă premium groasă de 1,8 cm, ca un covor de salon. Dedesubt are un strat de cauciuc, așa că apa și zăpada topită nu ajung la piele.",
       "pros": [
         "Strat de cauciuc: apa nu trece",
         "Aspect de covor premium",
-        "Mochetă groasă, de 1,8 mm"
+        "Groasă: 1,8 cm"
       ],
       "image": "/images/protection/mocheta.jpg",
       "pricePerMeter": 1600,

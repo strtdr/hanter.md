@@ -25,6 +25,12 @@ const img = (p?: string) => (p ? base + p.replace(/^\//, '') : '');
       {m.protectionTypes.map((p) => (
         <figure class="pcard">
           {p.image && <img src={img(p.image)} alt={`Material real: ${p.title.toLowerCase()}`} loading="lazy" width="640" height="480" />}
+          {p.sectionImage && p.thicknessCm && (
+            <div class="cut" style={`--t:${p.thicknessCm}`}>
+              <img src={img(p.sectionImage)} alt={`${p.title} în secțiune, grosime ${String(p.thicknessCm).replace('.', ',')} cm`} loading="lazy" />
+              <span class="dim" aria-hidden="true"><i></i><b>{String(p.thicknessCm).replace('.', ',')} cm</b></span>
+            </div>
+          )}
           <figcaption><b>{p.title}</b><span>{p.text}</span></figcaption>
         </figure>
       ))}
