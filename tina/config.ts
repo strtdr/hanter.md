@@ -207,6 +207,17 @@ export default defineConfig({
           },
           {
             type: 'object',
+            name: 'deposit',
+            label: 'Avans la comandă (lei)',
+            fields: [
+              { type: 'number', name: 'salon', label: 'Doar salon', required: true },
+              { type: 'number', name: 'withTrunkBack', label: 'Salon + portbagaj jos sau cu spătar', required: true },
+              { type: 'number', name: 'withTrunkFull', label: 'Salon + portbagaj full', required: true },
+            ],
+          },
+          { type: 'string', name: 'productionDays', label: 'Termen de fabricare (zile), ex. 2–7' },
+          {
+            type: 'object',
             name: 'salonFee',
             label: 'Manoperă salon (lei) pe mărime: sub 1,9 m · până la 2,2 m · mai mare',
             fields: [
@@ -430,6 +441,22 @@ export default defineConfig({
                   { type: 'string', name: 'text', label: 'Text', ui: { component: 'textarea' } },
                 ],
               },
+            ],
+          },
+          {
+            type: 'object',
+            name: 'delivery',
+            label: 'Avans, termen și livrare',
+            fields: [
+              { type: 'string', name: 'title', label: 'Titlu' },
+              { type: 'string', name: 'intro', label: 'Introducere', ui: { component: 'textarea' } },
+              { type: 'string', name: 'depositTitle', label: 'Titlu card avans (sumele: Test · Configurator → Avans)' },
+              { type: 'string', name: 'productionTitle', label: 'Titlu card termen (zilele: Test · Configurator)' },
+              { type: 'string', name: 'moldovaTitle', label: 'Titlu Moldova' },
+              { type: 'string', name: 'moldovaText', label: 'Text Moldova', ui: { component: 'textarea' } },
+              { type: 'string', name: 'workshopAddress', label: 'Adresa atelierului (apare doar dacă e completată)' },
+              { type: 'string', name: 'europeTitle', label: 'Titlu Europa' },
+              { type: 'string', name: 'europeText', label: 'Text Europa', ui: { component: 'textarea' } },
             ],
           },
           {

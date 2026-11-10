@@ -24,6 +24,9 @@ export const PROT = C.protection.map(p => ({ id: p.id, name: p.name, desc: p.des
 // Fără strat de protecție: se scade doar o parte din costul plasticului cu fire
 export const NOPROT_DISCOUNT = seven => seven ? C.noProtectionDiscount.sevenSeats : C.noProtectionDiscount.fiveSeats;
 // Manoperă + accesorii salon (clipse, bandă, călcâi) pe mărimea mașinii: [<1,9 m, ≤2,2 m, mai mare]
+// Avansul la comandă: salon / cu portbagaj jos sau cu spătar / cu portbagaj full
+export const DEPOSIT = C.deposit || { salon: 0, withTrunkBack: 0, withTrunkFull: 0 };
+export const PRODUCTION_DAYS = C.productionDays || "";
 export const SALON_FEE = { cu: C.salonFee.withSills, fara: C.salonFee.withoutSills };
 export const sizeTier = m => m < 1.9 ? 0 : (m <= 2.2 ? 1 : 2);
 // Manoperă portbagaj [mat, lucios]

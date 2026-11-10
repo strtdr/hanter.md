@@ -1,4 +1,4 @@
-import { LEATHER, NOPROT_DISCOUNT, PROT, SALON_FEE, TRUNK, TRUNK_ADD, sizeTier } from "./data.js";
+import { DEPOSIT, LEATHER, NOPROT_DISCOUNT, PROT, SALON_FEE, TRUNK, TRUNK_ADD, sizeTier } from "./data.js";
 import { $, S, rnd } from "./state.js";
 import { car, fuelClash, fuelOpts, hasCsj, isSeven, variant } from "./catalog.js";
 import { protSw } from "./visuals.js";
@@ -43,4 +43,10 @@ export function calc(){
     if((v.est||[]).includes(key)) estimated=true;
   }
   return {lines,total,estimated,onRequest,intern,v,V,l,p,t};
+}
+
+// Avansul: depinde de portbagaj; niciodată mai mare decât totalul
+export function deposit(r){
+  const d = S.trunk==="full" ? DEPOSIT.withTrunkFull : (S.trunk==="none" ? DEPOSIT.salon : DEPOSIT.withTrunkBack);
+  return !r.onRequest && r.total ? Math.min(d, r.total) : d;
 }
