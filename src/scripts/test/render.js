@@ -95,7 +95,8 @@ export function render(){
   $("flyGo").textContent = $("fly").classList.contains("cta") ? "Configurator" : "Comandă";
   $("flyCar").textContent=`${S.brand} ${S.model}` + (curGen(c)[1] ? ` · ${curGen(c)[0]}` : "");
   $("carTitle").textContent=`${S.brand} ${S.model}` + (curGen(c)[1] ? ` · ${curGen(c)[0]}` : "");
-  $("lines").innerHTML = r.lines.length ? r.lines.map(([k,t])=>`<div${k?` class="${k}"`:""}><span>${t}</span><span></span></div>`).join("") + `<div><span>${leatherSw(l)}${FINISH_NAMES[l.finish]}: ${l.name.toLowerCase()}, ${l.desc.toLowerCase()}</span><span></span></div>` : `<div><span>Alege covorașe pentru salon sau portbagaj.</span><span></span></div>`;
+  const row=([k,t])=>`<div${k?` class="${k}"`:""}><span>${t}</span><span></span></div>`;
+  $("lines").innerHTML = r.lines.length ? r.lines.filter(x=>x[0]!=="pline").map(row).join("") + `<div><span>${leatherSw(l)}${FINISH_NAMES[l.finish]}: ${l.name.toLowerCase()}, ${l.desc.toLowerCase()}</span><span></span></div>` + r.lines.filter(x=>x[0]==="pline").map(row).join("") : `<div><span>Alege covorașe pentru salon sau portbagaj.</span><span></span></div>`;
   $("total").textContent= r.onRequest ? "La cerere" : fmt(r.total);
   const dep = deposit(r);
   $("dep").innerHTML = dep ? `Avans la comandă: <b>${fmt(dep)}</b>${PRODUCTION_DAYS?` · gata în ${PRODUCTION_DAYS} zile`:""}` : "";
@@ -104,7 +105,7 @@ export function render(){
     ? "Încă nu avem consumul de material pentru acest model. Trimite comanda și îți spunem prețul exact."
     : r.estimated
     ? "Preț orientativ: avem puține lucrări pe acest model. Confirmăm prețul exact când primim comanda."
-    : "Prețul se confirmă după verificarea modelului în baza furnizorului. Execuție: câteva zile lucrătoare.";
+    : "Prețul se confirmă după verificarea modelului în baza furnizorului.";
   $("order").disabled = S.salon==="none" && S.trunk==="none";
   $("intern").innerHTML = `<table><thead><tr><th>Poziție</th><th>Consum</th><th>Lei/m</th><th>Lei</th></tr></thead><tbody>${r.intern.map(([a,m,p,s])=>`<tr><td>${a}</td><td class="n">${m===""?"":m2(m)}</td><td class="n">${p}</td><td class="n">${Math.round(s)}</td></tr>`).join("")}</tbody></table>${r.v?`<p class="note" style="margin-top:8px">Consum folosit: ${r.v.l||"toți anii"} · salon cu praguri ${m2(r.v.cu)}, fără ${m2(r.v.fara)}, protecție ${m2(r.v.pres)} · portbagaj jos ${m2(r.v.jos)}, cu spătar ${m2(r.v.spatar)}, full ${m2(r.v.full)}${r.v.est&&r.v.est.length?` · estimat: ${r.v.est.join(", ")}`:""} · ${r.v.n||0} lucrări</p>`:`<p class="note" style="margin-top:8px">Fără consum în tabelul Hanter.md pentru acest model.</p>`}`;
   if(!$("msgBox").hidden) buildMsg();
@@ -118,6 +119,7 @@ export function buildMsg(){
   parts.push(`Material: ${FINISH_NAMES[r.l.finish].toLowerCase()}, ${r.l.name.toLowerCase()}, ${r.l.desc.toLowerCase()}`);
   if(S.fuel && ((V.sv && S.salon!=="none" && fuelClash(V.sv[0])) || (V.tv && S.trunk!=="none" && fuelClash(V.tv[0])))) parts.push(`Atenție: tiparul din configurator e pentru altă motorizare decât ${S.fuel.toLowerCase()} — vă rog să confirmați mărimile.`);
   parts.push(r.onRequest ? `Preț: la cerere` : `Preț din configurator: ${fmt(r.total)}`);
+  if(r.promo && r.discount) parts.push(`Cod de reducere: ${r.promo.code} (−${fmt(r.discount)})`);
   if(deposit(r)) parts.push(`Avans: ${fmt(deposit(r))}`);
   const t=parts.join("\n");
   $("msg").textContent=t;

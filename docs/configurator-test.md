@@ -63,3 +63,13 @@ Adaugă `#intern` la adresă (`/test#intern`) ca să vezi tabelul cu consum, pre
 
 - Traducerile RU/EN (acum pagina e doar în română).
 - La primul build după merge, Tina Cloud trebuie să reindexeze schema (colecțiile noi `testConfigurator`, `testLanding`).
+
+## Coduri de reducere
+
+TinaCMS → Test · Configurator → **Coduri de reducere**: cod, tip (procent din total sau sumă fixă în lei), valoare, activ.
+
+- Clientul scrie codul în bon (sub prețuri) sau vine pe un link cu codul: `https://strdr4605.com/hanter.md/test/?cod=TIKTOK`
+- Codul din link se aplică singur și se ține minte 30 de zile în browserul clientului
+- Reducerea procentuală se rotunjește la 10 lei; avansul nu se schimbă
+- Codul ajunge în mesajul de comandă, în Telegram și în coloana „Cod reducere” din foaia „Comenzi” (după ce publicați versiunea nouă a Apps Script-ului)
+- Codurile sunt vizibile în codul paginii: folosiți-le pentru promoții publice (TikTok), nu pentru reduceri personale secrete

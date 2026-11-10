@@ -12,6 +12,15 @@
     "withTrunkFull": 4000
   },
   "productionDays": "2–7",
+  "promoCodes": [
+    {
+      "code": "TIKTOK",
+      "type": "percent",
+      "value": 5,
+      "active": true,
+      "note": "Cod promovat pe TikTok"
+    }
+  ],
   "salonFee": {
     "withSills": [
       1700,

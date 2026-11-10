@@ -1,4 +1,4 @@
-import { DEPOSIT, LEATHER, NOPROT_DISCOUNT, PROT, SALON_FEE, TRUNK, TRUNK_ADD, sizeTier } from "./data.js";
+import { DEPOSIT, PROMOS, LEATHER, NOPROT_DISCOUNT, PROT, SALON_FEE, TRUNK, TRUNK_ADD, sizeTier } from "./data.js";
 import { $, S, rnd } from "./state.js";
 import { car, fuelClash, fuelOpts, hasCsj, isSeven, variant } from "./catalog.js";
 import { protSw } from "./visuals.js";
@@ -42,7 +42,16 @@ export function calc(){
     total+=sum;
     if((v.est||[]).includes(key)) estimated=true;
   }
-  return {lines,total,estimated,onRequest,intern,v,V,l,p,t};
+  // Cod de reducere: se aplică la totalul calculat (nu la „La cerere”)
+  const promo = S.promo ? PROMOS.find(x=>x.code===S.promo) : null;
+  let discount = 0, subtotal = total;
+  if(promo && total > 0 && !onRequest){
+    discount = promo.type==="lei" ? Math.min(promo.value, total) : Math.round(total*promo.value/100/10)*10;
+    total -= discount;
+    lines.push(["pline",`Cod ${promo.code} (${promoLabel(promo)}): −${discount.toLocaleString("ro-RO").replace(/[\s.]/g," ")} lei`,null]);
+    intern.push([`Reducere ${promo.code}`,"","",-discount]);
+  }
+  return {lines,total,subtotal,discount,promo,estimated,onRequest,intern,v,V,l,p,t};
 }
 
 // Avansul: depinde de portbagaj; niciodată mai mare decât totalul
@@ -50,3 +59,7 @@ export function deposit(r){
   const d = S.trunk==="full" ? DEPOSIT.withTrunkFull : (S.trunk==="none" ? DEPOSIT.salon : DEPOSIT.withTrunkBack);
   return !r.onRequest && r.total ? Math.min(d, r.total) : d;
 }
+
+export const promoLabel = p => p.type==="lei" ? `−${p.value} lei` : `−${p.value}%`;
+// Caută codul (fără diferență între litere mari și mici). Întoarce codul găsit sau null.
+export function findPromo(code){ const c=String(code||"").trim().toUpperCase(); return PROMOS.find(x=>x.code===c) || null; }

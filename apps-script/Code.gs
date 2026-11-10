@@ -11,7 +11,7 @@
  */
 const HEADERS = ['Data', 'Tip', 'Telefon', 'Nume', 'Contact preferat', 'Mașina', 'Generația / anul',
   'Motorizare', 'Salon', 'Varianta salon', 'Piele', 'Protecție', 'Portbagaj', 'Varianta portbagaj',
-  'Total (lei)', 'Mesaj complet', 'Pagina', 'Status'];
+  'Total (lei)', 'Mesaj complet', 'Pagina', 'Status', 'Cod reducere'];
 
 function doPost(e) {
   const props = PropertiesService.getScriptProperties();
@@ -20,7 +20,7 @@ function doPost(e) {
   const clean = v => String(v == null ? '' : v).slice(0, 2000).replace(/^[=+\-@]/, "'$&"); // fără formule injectate
   const when = Utilities.formatDate(new Date(), 'Europe/Chisinau', 'dd.MM.yyyy HH:mm');
   const row = [when, d.kind, d.phone ? "'" + String(d.phone).replace(/^'/, '') : '', d.name, d.via, d.car, d.gen, d.fuel, d.salon, d.salonVariant,
-    d.leather, d.protection, d.trunk, d.trunkVariant, d.total, d.message, d.page, 'Nouă'].map((v, i) => (i === 0 || i === 2) ? v : clean(v));
+    d.leather, d.protection, d.trunk, d.trunkVariant, d.total, d.message, d.page, 'Nouă', d.promo].map((v, i) => (i === 0 || i === 2) ? v : clean(v));
 
   const lock = LockService.getScriptLock();
   lock.waitLock(10000);
@@ -39,7 +39,8 @@ function doPost(e) {
     d.leather ? 'Piele: ' + d.leather : '',
     d.protection ? 'Protecție: ' + d.protection : '',
     d.trunk ? 'Portbagaj: ' + d.trunk + (d.trunkVariant ? ' · ' + d.trunkVariant : '') : '',
-    d.total !== undefined && d.total !== '' ? 'Total: ' + d.total + (isNaN(d.total) ? '' : ' lei') : ''
+    d.total !== undefined && d.total !== '' ? 'Total: ' + d.total + (isNaN(d.total) ? '' : ' lei') : '',
+    d.promo ? '🎟 Cod: ' + d.promo : ''
   ].filter(String).join('\n');
 
   try {
