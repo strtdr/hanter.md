@@ -327,6 +327,7 @@ export default defineConfig({
               { type: 'string', name: 'desc', label: 'Descriere scurtă' },
               { type: 'string', name: 'details', label: 'Descriere în configurator', ui: { component: 'textarea' } },
               { type: 'string', name: 'pros', label: 'Avantaje', list: true },
+              { type: 'image', name: 'image', label: 'Poză material real' },
               { type: 'number', name: 'pricePerMeter', label: 'Preț pe metru (lei)', required: true },
               {
                 type: 'object',
@@ -487,6 +488,7 @@ export default defineConfig({
                 fields: [
                   { type: 'string', name: 'title', label: 'Denumire', required: true },
                   { type: 'string', name: 'text', label: 'Descriere', ui: { component: 'textarea' } },
+                  { type: 'image', name: 'image', label: 'Poză material real' },
                 ],
               },
             ],

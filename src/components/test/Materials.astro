@@ -2,6 +2,8 @@
 // Straturile covorașului + tipurile de covoraș de protecție
 import landing from '../../content/test/landing.json';
 const m = landing.materials;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const img = (p?: string) => (p ? base + p.replace(/^\//, '') : '');
 ---
 <section class="blk" id="materiale">
   <h2>{m.title}</h2>
@@ -15,13 +17,17 @@ const m = landing.materials;
     </ol>
   </div>
   <div class="prot-info">
-    <div class="pimg" aria-hidden="true"></div>
-    <div>
+    <div class="ph">
       <h3>{m.protectionTitle}</h3>
       <p>{m.protectionIntro}</p>
-      <ul class="pl">
-        {m.protectionTypes.map((p) => <li><b>{p.title}</b> – {p.text}</li>)}
-      </ul>
+    </div>
+    <div class="pcards">
+      {m.protectionTypes.map((p) => (
+        <figure class="pcard">
+          {p.image && <img src={img(p.image)} alt={`Material real: ${p.title.toLowerCase()}`} loading="lazy" width="640" height="480" />}
+          <figcaption><b>{p.title}</b><span>{p.text}</span></figcaption>
+        </figure>
+      ))}
     </div>
   </div>
 </section>

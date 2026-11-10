@@ -84,19 +84,22 @@
       }
     ],
     "protectionTitle": "Covorașul de protecție",
-    "protectionIntro": "Se pune deasupra covorașului din piele eco, acolo unde calci cel mai des. Ai trei variante:",
+    "protectionIntro": "Se pune deasupra covorașului din piele eco, acolo unde calci cel mai des, și se prinde cu clipse la fiecare loc. Toate trei au dedesubt un strat de cauciuc care nu lasă apa să treacă.",
     "protectionTypes": [
       {
         "title": "Plastic cu fire tari",
-        "text": "universal pentru iarnă și vară, rezistent la uzură, se spală simplu cu apă cu presiune."
+        "text": "Universal pentru iarnă și vară, cel mai rezistent la uzură, se spală simplu cu apă cu presiune.",
+        "image": "/images/protection/fire-tari.jpg"
       },
       {
         "title": "Plastic cu fire moi",
-        "text": "strânge foarte mult praf și gunoi între fire, universal pentru iarnă și vară, se spală ușor."
+        "text": "Strânge foarte mult praf și gunoi între fire, universal pentru iarnă și vară, se spală ușor.",
+        "image": "/images/protection/fire-moi.jpg"
       },
       {
         "title": "Mochetă premium 1,8 mm",
-        "text": "are dedesubt un strat de cauciuc care nu lasă apa să treacă."
+        "text": "Arată ca un covor de salon, cu aspect premium.",
+        "image": "/images/protection/mocheta.jpg"
       }
     ]
   },

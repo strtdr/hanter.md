@@ -306,13 +306,14 @@
       "id": "plastic",
       "name": "Plastic cu fire",
       "desc": "Rezistent la uzură, se spală cu apă cu presiune",
-      "details": "Covoraș cu fire tari din plastic, pus peste piele. Preia uzura de la tocuri și ține murdăria și apa între fire, așa că pielea de dedesubt rămâne curată și durează mai mult.",
+      "details": "Covoraș cu fire tari din plastic, pus peste piele, cu strat de cauciuc dedesubt. Preia uzura de la tocuri și ține murdăria și apa, așa că pielea de dedesubt rămâne curată și durează mai mult.",
       "pros": [
-        "Pielea de dedesubt durează mai mult",
         "Cel mai rezistent la uzură",
+        "Strat de cauciuc: apa nu trece",
         "Universal pentru iarnă și vară",
         "Se spală cu apă cu presiune"
       ],
+      "image": "/images/protection/fire-tari.jpg",
       "pricePerMeter": 1000,
       "colors": [
         {
@@ -349,13 +350,14 @@
       "id": "moale",
       "name": "Plastic cu fire moi",
       "desc": "Strânge mult praf și gunoi, pentru iarnă și vară",
-      "details": "Covoraș cu fire moi din plastic, plăcut la atingere. Praful, nisipul și gunoiul rămân prinse în fire, nu ajung pe piele.",
+      "details": "Covoraș cu fire moi din plastic, cu strat de cauciuc dedesubt. Praful, nisipul și gunoiul rămân prinse în fire, nu ajung pe piele.",
       "pros": [
         "Strânge foarte mult praf și gunoi",
-        "Plăcut la atingere",
+        "Strat de cauciuc: apa nu trece",
         "Universal pentru iarnă și vară",
         "Se spală ușor"
       ],
+      "image": "/images/protection/fire-moi.jpg",
       "pricePerMeter": 600,
       "colors": [
         {
@@ -386,6 +388,7 @@
         "Aspect de covor premium",
         "Mochetă groasă, de 1,8 mm"
       ],
+      "image": "/images/protection/mocheta.jpg",
       "pricePerMeter": 1600,
       "colors": [
         {

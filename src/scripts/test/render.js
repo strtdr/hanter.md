@@ -84,7 +84,7 @@ export function render(){
   const fi_=FINISH_INFO[l.finish]||{};
   $("finInfo").innerHTML = info(FINISH_NAMES[l.finish], fi_.text, fi_.pros);
   const pp=PROT.find(x=>x.id===S.prot);
-  $("protInfo").innerHTML = pp && S.salon!=="none" ? info(pp.name, pp.details, pp.pros) : "";
+  $("protInfo").innerHTML = pp && S.salon!=="none" ? (pp.image?`<img class="mimg" src="${pp.image}" alt="Material real: ${pp.name.toLowerCase()}" width="640" height="480">`:"")+`<div>${info(pp.name, pp.details, pp.pros)}</div>` : "";
   $("protInfo").hidden = !$("protInfo").innerHTML;
   $("matCap").textContent = l.tex ? `Material real: ${l.name.toLowerCase()}${l.finish==="lucios"?" (luciu simulat)":""}` : "Previzualizare orientativă a culorilor";
   $("mat").innerHTML=matSVG(l,S.salon==="cu" && c.only!=="full","main");
