@@ -518,6 +518,8 @@ export default defineConfig({
               { type: 'string', name: 'moldovaTitle', label: 'Titlu Moldova' },
               { type: 'string', name: 'moldovaText', label: 'Text Moldova', ui: { component: 'textarea' } },
               { type: 'string', name: 'workshopAddress', label: 'Adresa atelierului (apare doar dacă e completată)' },
+              { type: 'string', name: 'mapUrl', label: 'Link Google Maps' },
+              { type: 'string', name: 'visitNote', label: 'Notă: sună înainte (se adaugă telefonul automat)' },
               { type: 'string', name: 'europeTitle', label: 'Titlu Europa' },
               { type: 'string', name: 'europeText', label: 'Text Europa', ui: { component: 'textarea' } },
             ],
