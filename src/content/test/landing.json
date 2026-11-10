@@ -62,7 +62,7 @@
     "layers": [
       {
         "title": "Piele eco",
-        "text": "Stratul pe care îl vezi, cu cusătură în romb sau pătrat. Nu lasă apa să treacă și se șterge cu o cârpă umedă."
+        "text": "Stratul pe care îl vezi, cu cusătură în romb sau pătrat. Dă salonului un aspect premium și se șterge ușor cu o cârpă umedă."
       },
       {
         "title": "Paralon (burete moale)",
@@ -70,15 +70,15 @@
       },
       {
         "title": "Peliculă impermeabilă",
-        "text": "Oprește apa, zăpada topită și noroiul. Mocheta originală a mașinii rămâne uscată și curată."
+        "text": "Dacă se varsă ceva pe covoraș, pelicula nu lasă lichidul să treacă până la mocheta originală a mașinii."
       },
       {
         "title": "Burete mai tare",
-        "text": "Ține forma covorașului: nu se îndoaie sub pedale și nu se deformează în timp."
+        "text": "Ține covorașul rigid: își păstrează forma, nu se botește și nu se lasă nici după mult timp."
       },
       {
         "title": "Plasă antiderapantă",
-        "text": "Se prinde de mocheta originală, așa că covorașul stă fix și nu alunecă sub pedale."
+        "text": "Când podeaua mașinii e din mochetă, plasa se prinde de ea și covorașul nu alunecă."
       }
     ],
     "protectionTitle": "Covorașul de protecție",
