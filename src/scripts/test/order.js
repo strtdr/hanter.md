@@ -12,7 +12,7 @@ export function orderPayload(kind){
     leather:`${FINISH_NAMES[r.l.finish]}: ${r.l.name}, ${r.l.desc}`,
     protection:S.salon==="none"?"":(S.prot==="none"?"Fără":`${r.p.name}${pc?", "+pc[0]:""}`),
     trunk:S.trunk==="none"?"":`${r.t.name}${S.trunk!=="full"?TRUNK_ADD.filter(a=>S[a.id]).map(a=>" + "+a.name).join(""):""}`, trunkVariant:V&&V.tv?V.tv[0]:"",
-    total:r.onRequest?"la cerere":r.total, message:$("msg").textContent};
+    total:r.onRequest?"la cerere":r.total, promo:r.promo&&r.discount?`${r.promo.code} (−${r.discount} lei)`:"", message:$("msg").textContent};
 }
 export async function sendOrder(data){
   if(!ORDER_URL || ORDER_URL.startsWith("__")) throw new Error("no endpoint");

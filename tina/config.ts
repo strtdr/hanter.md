@@ -218,6 +218,20 @@ export default defineConfig({
           { type: 'string', name: 'productionDays', label: 'Termen de fabricare (zile), ex. 2–7' },
           {
             type: 'object',
+            name: 'promoCodes',
+            label: 'Coduri de reducere',
+            list: true,
+            ui: { itemProps: (item) => ({ label: `${item.code ?? 'COD'} · ${item.type === 'lei' ? (item.value ?? 0) + ' lei' : (item.value ?? 0) + '%'}${item.active === false ? ' (oprit)' : ''}` }) },
+            fields: [
+              { type: 'string', name: 'code', label: 'Cod (ex. TIKTOK)', required: true },
+              { type: 'string', name: 'type', label: 'Tip reducere', options: [{ value: 'percent', label: 'Procent din total' }, { value: 'lei', label: 'Sumă fixă (lei)' }], required: true },
+              { type: 'number', name: 'value', label: 'Valoare (% sau lei)', required: true },
+              { type: 'boolean', name: 'active', label: 'Activ' },
+              { type: 'string', name: 'note', label: 'Notă internă (unde e promovat)' },
+            ],
+          },
+          {
+            type: 'object',
             name: 'salonFee',
             label: 'Manoperă salon (lei) pe mărime: sub 1,9 m · până la 2,2 m · mai mare',
             fields: [

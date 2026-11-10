@@ -245,3 +245,12 @@ footer{margin-top:40px;border-top:1px dashed var(--line);padding-top:16px;font-s
 .term li strong{color:var(--ink);white-space:nowrap;font-variant-numeric:tabular-nums}
 .dep{margin:8px 0 0;font-size:14px;color:var(--muted)}
 .dep b{color:var(--ink)}
+
+/* Cod de reducere */
+.promo{display:flex;gap:8px}
+.promo input{flex:1;min-width:0;font:inherit;padding:10px 12px;border:1px dashed var(--line);border-radius:8px;background:var(--bg);color:var(--ink);text-transform:uppercase}
+.promo input::placeholder{text-transform:none;color:var(--muted)}
+.promo button{font:inherit;font-weight:600;padding:10px 14px;border-radius:8px;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.promomsg{margin:-4px 0 0;font-size:13px}
+.promomsg.ok{color:var(--ok)} .promomsg.err{color:var(--accent)}
+.lines .pline{color:var(--ok);font-weight:600}
