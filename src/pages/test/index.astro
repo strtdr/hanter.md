@@ -21,7 +21,8 @@ const n = (x: number) => x.toLocaleString('ro-MD').replace(/[\s,. ]/g, ' ');
 const models = n(cars.length);
 const patterns = n(Math.floor(cars.reduce((s, c) => s + c.s20.length + c.s30.length + c.s21.length, 0) / 500) * 500) + '+';
 // datele pentru scriptul din browser; "<" e escapat ca să nu închidă tag-ul <script>
-const pageData = JSON.stringify({ base: import.meta.env.BASE_URL, cfg, cars, gens }).replace(/</g, '\\u003c');
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const pageData = JSON.stringify({ base, trackUrl: `${base}test/comanda/`, cfg, cars, gens }).replace(/</g, '\\u003c');
 ---
 <html lang="ro">
   <head>

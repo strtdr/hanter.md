@@ -1,0 +1,26 @@
+---
+// Formularul „Starea comenzii” + pașii comenzii. Logica: src/scripts/test/track.js
+---
+<section class="blk track" id="stare">
+  <h2>Starea comenzii</h2>
+  <p class="sub2">Scrie numărul comenzii (îl primești după ce trimiți comanda, de exemplu H-7K2QX) și ultimele 4 cifre ale telefonului cu care ai comandat.</p>
+  <form class="trf" id="trf" novalidate>
+    <label>Numărul comenzii
+      <input type="text" id="tNr" placeholder="H-7K2QX" autocomplete="off" autocapitalize="characters" spellcheck="false" />
+    </label>
+    <label>Ultimele 4 cifre ale telefonului
+      <input type="text" id="tTel" placeholder="2033" inputmode="numeric" maxlength="4" autocomplete="off" />
+    </label>
+    <button type="submit" id="tGo">Verifică</button>
+  </form>
+  <p class="terr" id="tErr" role="alert" hidden></p>
+  <div class="tres" id="tRes" aria-live="polite" hidden>
+    <small id="tMeta"></small>
+    <b id="tTitle"></b>
+    <p id="tText"></p>
+    <span class="tstep" id="tStep"></span>
+  </div>
+  <h3 class="tlh">Cum decurge comanda</h3>
+  <ol class="tline" id="tLine"></ol>
+  <p class="thelp">Ai întrebări despre comandă? Sună-ne: <a id="tCall" href="#"></a></p>
+</section>

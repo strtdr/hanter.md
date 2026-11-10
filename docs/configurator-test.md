@@ -73,3 +73,11 @@ TinaCMS → Test · Configurator → **Coduri de reducere**: cod, tip (procent d
 - Reducerea procentuală se rotunjește la 10 lei; avansul nu se schimbă
 - Codul ajunge în mesajul de comandă, în Telegram și în coloana „Cod reducere” din foaia „Comenzi” (după ce publicați versiunea nouă a Apps Script-ului)
 - Codurile sunt vizibile în codul paginii: folosiți-le pentru promoții publice (TikTok), nu pentru reduceri personale secrete
+
+## Starea comenzii (/test/comanda/)
+
+- La trimitere, fiecare comandă primește un număr scurt (ex. `H-7K2QX`), afișat clientului cu link spre pagina de urmărire și salvat în coloana „Nr. comandă”
+- Clientul scrie numărul + ultimele 4 cifre ale telefonului; pagina cere starea de la Apps Script (`doGet`), care răspunde doar cu starea, mașina și data (fără nume/telefon)
+- Starea se schimbă din lista derulantă din coloana „Status” a foii „Comenzi”
+- Textele pentru client: TinaCMS → Test · Configurator → **Stări comandă**. Câmpul „Text în coloana Status” trebuie să fie identic cu valoarea din tabel. „Nouă” (rânduri vechi) = primul pas
+- După schimbarea scriptului: Deploy → Manage deployments → editează deployment-ul → New version (adresa rămâne aceeași)

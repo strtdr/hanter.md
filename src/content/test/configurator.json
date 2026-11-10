@@ -21,6 +21,68 @@
       "note": "Cod promovat pe TikTok"
     }
   ],
+  "orderStatuses": [
+    {
+      "value": "Așteptare confirmare",
+      "title": "Așteptăm confirmarea",
+      "text": "Am primit comanda. Te contactăm să confirmăm detaliile și avansul.",
+      "cancel": false
+    },
+    {
+      "value": "Confirmată",
+      "title": "Comanda e confirmată",
+      "text": "Detaliile și avansul sunt confirmate, comanda intră în lucru.",
+      "cancel": false
+    },
+    {
+      "value": "Așteptare tăiere",
+      "title": "Așteaptă tăierea",
+      "text": "Comanda e în rând pentru croit.",
+      "cancel": false
+    },
+    {
+      "value": "Tăiat",
+      "title": "Croit",
+      "text": "Covorașele sunt croite după tiparul mașinii tale.",
+      "cancel": false
+    },
+    {
+      "value": "Pregătit pentru probă",
+      "title": "Gata de probă",
+      "text": "Covorașele sunt pregătite de probă pe mașină. Te contactăm să stabilim ora.",
+      "cancel": false
+    },
+    {
+      "value": "Probă finalizată",
+      "title": "Proba e făcută",
+      "text": "Am probat covorașele pe mașină și facem ultimele ajustări.",
+      "cancel": false
+    },
+    {
+      "value": "Finisat",
+      "title": "Covorașele sunt finisate",
+      "text": "Cusăturile și marginile sunt gata.",
+      "cancel": false
+    },
+    {
+      "value": "Pregătit de instalare / livrare",
+      "title": "Gata de instalare sau livrare",
+      "text": "Covorașele sunt gata. Te contactăm pentru instalare sau trimitere.",
+      "cancel": false
+    },
+    {
+      "value": "Instalat / livrat",
+      "title": "Instalat / livrat",
+      "text": "Covorașele sunt la tine. Drum bun!",
+      "cancel": false
+    },
+    {
+      "value": "Anulată",
+      "title": "Comanda e anulată",
+      "text": "Comanda a fost anulată. Dacă e o greșeală, sună-ne.",
+      "cancel": true
+    }
+  ],
   "salonFee": {
     "withSills": [
       1700,

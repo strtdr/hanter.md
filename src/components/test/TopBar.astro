@@ -1,5 +1,8 @@
 ---
-// Antetul paginii cu meniul de ancore
+// Antetul paginii cu meniul de ancore. `home` = adresa paginii principale, când antetul e pe altă pagină.
+interface Props { home?: string }
+const { home = '' } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 const links = [
   ['#beneficii', 'Beneficii'],
   ['#solutia', 'Soluția'],
@@ -8,7 +11,7 @@ const links = [
   ['#cum', 'Cum comanzi'],
   ['#livrare', 'Livrare'],
   ['#configurator', 'Configurator'],
-];
+].map(([h, l]) => [home + h, l]).concat([[`${base}test/comanda/`, 'Starea comenzii']]);
 ---
 <header class="top">
   <div class="logo">Hanter<span>.md</span></div>

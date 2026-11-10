@@ -218,6 +218,19 @@ export default defineConfig({
           { type: 'string', name: 'productionDays', label: 'Termen de fabricare (zile), ex. 2–7' },
           {
             type: 'object',
+            name: 'orderStatuses',
+            label: 'Stări comandă (pagina „Starea comenzii”)',
+            list: true,
+            ui: { itemProps: (item) => ({ label: `${item.value ?? 'Stare nouă'}${item.cancel ? ' (anulare)' : ''}` }) },
+            fields: [
+              { type: 'string', name: 'value', label: 'Text în coloana Status din tabel (identic)', required: true },
+              { type: 'string', name: 'title', label: 'Titlu pentru client', required: true },
+              { type: 'string', name: 'text', label: 'Explicație pentru client', ui: { component: 'textarea' } },
+              { type: 'boolean', name: 'cancel', label: 'E anulare (nu apare în pași)' },
+            ],
+          },
+          {
+            type: 'object',
             name: 'promoCodes',
             label: 'Coduri de reducere',
             list: true,

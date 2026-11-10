@@ -32,6 +32,9 @@ export const PRODUCTION_DAYS = C.productionDays || "";
 // Coduri de reducere (TinaCMS): procent sau sumă fixă în lei; doar cele active
 export const PROMOS = (C.promoCodes || []).filter(p => p.active !== false && p.code)
   .map(p => ({ code: String(p.code).trim().toUpperCase(), type: p.type === "lei" ? "lei" : "percent", value: Number(p.value) || 0 }));
+// Stările comenzii (pagina „Starea comenzii”); textul din „value” e cel din coloana Status a tabelului
+export const STATUSES = (C.orderStatuses || []).map(s => ({ value: s.value, title: s.title || s.value, text: s.text || "", cancel: !!s.cancel }));
+export const TRACK_URL = raw.trackUrl || "";
 export const SALON_FEE = { cu: C.salonFee.withSills, fara: C.salonFee.withoutSills };
 export const sizeTier = m => m < 1.9 ? 0 : (m <= 2.2 ? 1 : 2);
 // Manoperă portbagaj [mat, lucios]
