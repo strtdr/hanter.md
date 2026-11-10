@@ -156,7 +156,9 @@
     "productionTitle": "Gata în",
     "moldovaTitle": "În Moldova",
     "moldovaText": "Cel mai bine te apropii la atelier și ridici covorașele direct de la noi.",
-    "workshopAddress": "",
+    "workshopAddress": "str. Primar Gherman Pântea 100, Chișinău",
+    "mapUrl": "https://www.google.com/maps/search/?api=1&query=Hanter&query_place_id=ChIJSQdvnRN9yUART6xuHdquC88",
+    "visitNote": "Sună-ne înainte să vii, ca să fim la atelier și să te putem primi.",
     "europeTitle": "În Europa",
     "europeText": "Trimitem prin transportul de colete, oriunde în Europa."
   },

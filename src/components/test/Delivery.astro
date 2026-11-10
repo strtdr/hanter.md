@@ -4,6 +4,8 @@
 import landing from '../../content/test/landing.json';
 import cfg from '../../content/test/configurator.json';
 const d = landing.delivery;
+const tel = cfg.phone.replace(/[^\d+]/g, '');
+const telShow = cfg.phone.replace(/^\+373(\d{3})(\d{2})(\d{3})$/, '+373 $1 $2 $3');
 const lei = (n: number) => n.toLocaleString('ro-MD').replace(/[\s,. ]/g, ' ') + ' lei';
 ---
 <section class="blk" id="livrare">
@@ -27,6 +29,8 @@ const lei = (n: number) => n.toLocaleString('ro-MD').replace(/[\s,. ]/g, ' ') + 
       <b>{d.moldovaTitle}</b>
       <p>{d.moldovaText}</p>
       {d.workshopAddress && <p class="addr">{d.workshopAddress}</p>}
+      {d.mapUrl && <a class="maplink" href={d.mapUrl} target="_blank" rel="noopener">Deschide în Google Maps →</a>}
+      {d.visitNote && <p class="visit">{d.visitNote} <a href={`tel:${tel}`}>{telShow}</a></p>}
     </div>
     <div class="term">
       <b>{d.europeTitle}</b>
