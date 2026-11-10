@@ -231,6 +231,17 @@ export default defineConfig({
           },
           {
             type: 'object',
+            name: 'cancelPolicy',
+            label: 'Modificare / anulare comandă',
+            fields: [
+              { type: 'number', name: 'lastFreeStep', label: 'Ultimul pas la care se poate modifica/anula gratuit (ex. 3)', required: true },
+              { type: 'string', name: 'short', label: 'Text scurt lângă butonul „Trimite comanda”' },
+              { type: 'string', name: 'textOpen', label: 'Starea comenzii: text până la acest pas', ui: { component: 'textarea' } },
+              { type: 'string', name: 'textLocked', label: 'Starea comenzii: text după acest pas', ui: { component: 'textarea' } },
+            ],
+          },
+          {
+            type: 'object',
             name: 'promoCodes',
             label: 'Coduri de reducere',
             list: true,
@@ -538,6 +549,8 @@ export default defineConfig({
               { type: 'string', name: 'visitNote', label: 'Notă: sună înainte (se adaugă telefonul automat)' },
               { type: 'string', name: 'europeTitle', label: 'Titlu Europa' },
               { type: 'string', name: 'europeText', label: 'Text Europa', ui: { component: 'textarea' } },
+              { type: 'string', name: 'cancelTitle', label: 'Titlu modificare / anulare' },
+              { type: 'string', name: 'cancelText', label: 'Text modificare / anulare', ui: { component: 'textarea' } },
             ],
           },
           {

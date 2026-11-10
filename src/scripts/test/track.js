@@ -1,6 +1,6 @@
 // Pagina „Starea comenzii”: clientul scrie nr. comenzii + ultimele 4 cifre ale telefonului,
 // iar Google Apps Script-ul (apps-script/Code.gs → doGet) răspunde cu starea din tabelul „Comenzi”.
-import { ORDER_URL, PHONE, STATUSES } from "./data.js";
+import { CANCEL_POLICY, ORDER_URL, PHONE, STATUSES } from "./data.js";
 
 const $ = id => document.getElementById(id);
 const steps = STATUSES.filter(s => !s.cancel);
@@ -44,6 +44,14 @@ async function check(nr, tel) {
     $("tText").textContent = s.text;
     $("tStep").textContent = cancel ? "" : `Pasul ${Math.max(i, 0) + 1} din ${steps.length}`;
     $("tRes").classList.toggle("cancel", !!cancel);
+    // Modificare / anulare: gratuit până la pasul lastFreeStep, apoi materialul e folosit
+    const cp = CANCEL_POLICY, pol = $("tPolicy");
+    if (cp && !cancel && i < steps.length - 1) {
+      const open = Math.max(i, 0) + 1 <= (cp.lastFreeStep || 0);
+      pol.textContent = open ? cp.textOpen : cp.textLocked;
+      pol.className = "tpol " + (open ? "open" : "locked");
+      pol.hidden = !pol.textContent;
+    } else pol.hidden = true;
     $("tRes").hidden = false;
     timeline(cancel ? -1 : Math.max(i, 0));
     try { localStorage.setItem("hanter_order", JSON.stringify({ nr, tel, t: Date.now() })); } catch (e) {}

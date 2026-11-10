@@ -38,4 +38,5 @@ const lei = (n: number) => n.toLocaleString('ro-MD').replace(/[\s,. ]/g, ' ') + 
       <p>{d.europeText}</p>
     </div>
   </div>
+  {d.cancelText && <p class="covnote"><b>{d.cancelTitle}.</b> {d.cancelText}</p>}
 </section>

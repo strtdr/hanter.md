@@ -311,3 +311,9 @@ footer{margin-top:40px;border-top:1px dashed var(--line);padding-top:16px;font-s
 .thelp{margin-top:18px;font-size:14px;color:var(--muted)}
 .thelp a{color:var(--accent);font-weight:700}
 @media (max-width:640px){ .trf{grid-template-columns:1fr} }
+
+/* Modificare / anulare */
+.tpol{margin:8px 0 0;padding:10px 12px;border-radius:8px;font-size:14px;line-height:1.45}
+.tpol.open{background:var(--bg);color:var(--ink)}
+.tpol.locked{background:var(--warn-soft);color:var(--ink);border-left:3px solid var(--warn)}
+.opol{display:block;font-size:12px;color:var(--muted);margin-top:4px}

@@ -83,6 +83,12 @@
       "cancel": true
     }
   ],
+  "cancelPolicy": {
+    "lastFreeStep": 3,
+    "short": "Poți modifica sau anula comanda gratuit până începe tăierea.",
+    "textOpen": "Până începe tăierea poți modifica sau anula comanda gratuit. Sună-ne sau scrie-ne cât mai repede.",
+    "textLocked": "Covorașele sunt deja croite, așa că comanda nu mai poate fi modificată sau anulată gratuit. Dacă o anulezi acum, achiți pielea eco folosită și 1000 lei pentru manoperă. Dacă primim o comandă pentru aceeași mașină și aceeași combinație de culori, îți întoarcem banii."
+  },
   "salonFee": {
     "withSills": [
       1700,

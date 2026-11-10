@@ -1,4 +1,4 @@
-import { CC, FINISH_NAMES, ORDER_URL, TRACK_URL, TRUNK_ADD } from "./data.js";
+import { CANCEL_POLICY, CC, FINISH_NAMES, ORDER_URL, TRACK_URL, TRUNK_ADD } from "./data.js";
 import { $, S } from "./state.js";
 import { car, hasCsj } from "./catalog.js";
 import { calc, salonName } from "./price.js";
@@ -35,6 +35,7 @@ export function phHint(bad){ const c=ccOf(), n=c[3]===c[4]?`${c[3]} cifre`:`${c[
 export const phoneOk = () => { const c=ccOf(), L=natDigits().length; return L>=c[3] && L<=c[4]; };
 export const phoneFull = () => `+${ccOf()[2]} ${natDigits()}`;
 export function initOrder(){
+  $("oPolicy").textContent = CANCEL_POLICY && CANCEL_POLICY.short || "";
   (()=>{ const sel=$("oCc"); sel.innerHTML=CC.map(([c,n,d])=>`<option value="${c}">${flag(c)} +${d} ${n}</option>`).join("");
     const lang=(navigator.language||"").toUpperCase(), reg=lang.split("-")[1]; sel.value = CC.some(x=>x[0]===reg) ? reg : "MD"; })();
   $("oCc").addEventListener("change",()=>{ phHint(false); $("oPhone").setCustomValidity(""); });
