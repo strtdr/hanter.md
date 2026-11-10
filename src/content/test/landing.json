@@ -6,7 +6,9 @@
     "ctaPrimary": "Calculează prețul",
     "ctaSecondary": "De ce Hanter.md",
     "leatherCombos": "16",
-    "imageCaption": "Material real: negru cu ață bej, model romb"
+    "imageCaption": "Material real: negru cu ață bej, model romb",
+    "googleRating": "4,4",
+    "googleReviews": "36"
   },
   "benefits": {
     "title": "Ce câștigi",
@@ -158,6 +160,11 @@
     "moldovaText": "Cel mai bine te apropii la atelier și ridici covorașele direct de la noi.",
     "workshopAddress": "str. Primar Gherman Pântea 100, Chișinău",
     "mapUrl": "https://www.google.com/maps/search/?api=1&query=Hanter&query_place_id=ChIJSQdvnRN9yUART6xuHdquC88",
+    "hours": [
+      "Luni–vineri: 9:00–17:30",
+      "Sâmbătă: 10:00–15:00",
+      "Duminică: închis"
+    ],
     "visitNote": "Sună-ne înainte să vii, ca să fim la atelier și să te putem primi.",
     "europeTitle": "În Europa",
     "europeText": "Trimitem prin transportul de colete, oriunde în Europa."

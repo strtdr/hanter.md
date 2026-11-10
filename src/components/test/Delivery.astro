@@ -29,6 +29,7 @@ const lei = (n: number) => n.toLocaleString('ro-MD').replace(/[\s,. ]/g, ' ') + 
       <b>{d.moldovaTitle}</b>
       <p>{d.moldovaText}</p>
       {d.workshopAddress && <p class="addr">{d.workshopAddress}</p>}
+      {d.hours && d.hours.length > 0 && <ul class="hours">{d.hours.map((x) => <li>{x}</li>)}</ul>}
       {d.mapUrl && <a class="maplink" href={d.mapUrl} target="_blank" rel="noopener">Deschide în Google Maps →</a>}
       {d.visitNote && <p class="visit">{d.visitNote} <a href={`tel:${tel}`}>{telShow}</a></p>}
     </div>
