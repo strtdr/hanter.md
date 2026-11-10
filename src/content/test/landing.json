@@ -17,35 +17,43 @@
     "items": [
       {
         "title": "Se potrivesc la milimetru",
-        "text": "Croim după tiparul exact al modelului și generației, inclusiv diferențele dintre versiunile pe benzină, hibride și electrice."
+        "text": "Croim după tiparul exact al modelului și generației, inclusiv diferențele dintre versiunile pe benzină, hibride și electrice.",
+        "icon": "/images/icons/masura.png"
       },
       {
         "title": "Podeaua rămâne curată",
-        "text": "Pielea eco nu lasă apa, noroiul și zăpada să ajungă la mocheta originală. Se șterge cu o cârpă umedă."
+        "text": "Pielea eco nu lasă apa, noroiul și zăpada să ajungă la mocheta originală. Se șterge cu o cârpă umedă.",
+        "icon": "/images/icons/curat.png"
       },
       {
         "title": "Pragurile sunt protejate",
-        "text": "Varianta cu acoperire de praguri apără și marginile ușilor, unde se uzează cel mai repede."
+        "text": "Varianta cu acoperire de praguri apără și marginile ușilor, unde se uzează cel mai repede.",
+        "icon": "/images/icons/protectie.png"
       },
       {
         "title": "Rezistă la uzură",
-        "text": "Stratul de protecție de deasupra (plastic cu fire sau mochetă premium) preia frecarea de la încălțăminte."
+        "text": "Stratul de protecție de deasupra (plastic cu fire sau mochetă premium) preia frecarea de la încălțăminte.",
+        "icon": "/images/icons/rezistent.png"
       },
       {
         "title": "Schimbi ambianța din salon",
-        "text": "Alegi culoarea pielii și a aței ca să dai interiorului un aer nou sau să le asortezi cu tapițeria și ornamentele mașinii. 16 combinații, mat sau lucios."
+        "text": "Alegi culoarea pielii și a aței ca să dai interiorului un aer nou sau să le asortezi cu tapițeria și ornamentele mașinii. 16 combinații, mat sau lucios.",
+        "icon": "/images/icons/culori.png"
       },
       {
         "title": "Și portbagajul",
-        "text": "Podea, spătarul banchetei sau portbagaj complet, cu margine ridicată ca să nu se scurgă nimic."
+        "text": "Podea, spătarul banchetei sau portbagaj complet, cu margine ridicată ca să nu se scurgă nimic.",
+        "icon": "/images/icons/portbagaj.png"
       },
       {
         "title": "Salon mai liniștit",
-        "text": "Covorașele acoperă aproape toată podeaua, iar materialul gros, în mai multe straturi, îmbunătățește izolarea fonică: se aude mai puțin zgomotul de la roți și de pe drum."
+        "text": "Covorașele acoperă aproape toată podeaua, iar materialul gros, în mai multe straturi, îmbunătățește izolarea fonică: se aude mai puțin zgomotul de la roți și de pe drum.",
+        "icon": "/images/icons/liniste.png"
       },
       {
         "title": "Fabricat în Moldova, gata în 1–7 zile",
-        "text": "Croim și coasem totul în atelierul nostru din Chișinău. Pentru că lucrăm pe loc, facem proba pe mașina ta, dacă poți veni la atelier."
+        "text": "Croim și coasem totul în atelierul nostru din Chișinău. Pentru că lucrăm pe loc, facem proba pe mașina ta, dacă poți veni la atelier.",
+        "icon": "/images/icons/atelier.png"
       }
     ]
   },

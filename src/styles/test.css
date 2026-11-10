@@ -396,3 +396,6 @@ body.scrolled .navbtn{display:flex}
 .wthumb{flex:none;width:112px;padding:0;border:0;background:none;cursor:zoom-in;display:grid;gap:4px;text-align:left;color:var(--muted);font:inherit;font-size:11px}
 .wthumb img{width:112px;height:140px;object-fit:cover;border-radius:8px;display:block}
 .wthumb:focus-visible img{outline:3px solid var(--accent);outline-offset:2px}
+
+/* Pictogramele din „Ce câștigi”: aceeași mărime, pe pătrat alb */
+.ben .bic{width:64px;height:64px;display:block;background:#fff;border-radius:12px;padding:6px;box-sizing:border-box;object-fit:contain;border:1px solid var(--line)}

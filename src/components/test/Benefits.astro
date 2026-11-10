@@ -2,13 +2,15 @@
 import landing from '../../content/test/landing.json';
 const b = landing.benefits;
 const nr = (i: number) => String(i + 1).padStart(2, '0');
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const icon = (p?: string) => (p ? base + p.replace(/^\//, '') : '');
 ---
 <section class="blk" id="beneficii">
   <h2>{b.title}</h2>
   <p class="sub2">{b.intro}</p>
   <div class="bens">
     {b.items.map((it, i) => (
-      <div class="ben"><span class="ic">{nr(i)}</span><b>{it.title}</b><p>{it.text}</p></div>
+      <div class="ben">{it.icon ? <img class="bic" src={icon(it.icon)} alt="" width="64" height="64" loading="lazy" /> : <span class="ic">{nr(i)}</span>}<b>{it.title}</b><p>{it.text}</p></div>
     ))}
   </div>
 </section>

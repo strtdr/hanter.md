@@ -442,6 +442,7 @@ export default defineConfig({
                 ui: { itemProps: (item) => ({ label: item.title }) },
                 fields: [
                   { type: 'string', name: 'title', label: 'Titlu', required: true },
+                  { type: 'image', name: 'icon', label: 'Pictogramă (pătrat, fundal alb)' },
                   { type: 'string', name: 'text', label: 'Text', ui: { component: 'textarea' } },
                 ],
               },
