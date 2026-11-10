@@ -1,4 +1,4 @@
-import { CARS, FINISH_NAMES, LEATHER, PHONE, PROT, SALON, TRUNK, TRUNK_ADD, PRODUCTION_DAYS } from "./data.js";
+import { CARS, FINISH_INFO, FINISH_NAMES, LEATHER, PHONE, PROT, SALON, TRUNK, TRUNK_ADD, PRODUCTION_DAYS } from "./data.js";
 import { $, S, fmt, m2 } from "./state.js";
 import { PT, YR, brands, car, curGen, fuelClash, fuelOpts, gens, hasCsj, salonList, trunkList, vtags } from "./catalog.js";
 import { leatherSw, matSVG, protSw, thumb } from "./visuals.js";
@@ -79,6 +79,13 @@ export function render(){
   $("trunkAdd").onchange = e => { S[e.target.dataset.k]=e.target.checked; render(); };
   $("leather").innerHTML = Object.keys(FINISH_NAMES).filter(f=>LEATHER.some(x=>x.finish===f)).map(f=>`<div class="sub">${FINISH_NAMES[f]}</div><div class="opts matopts">${LEATHER.filter(x=>x.finish===f).map(it=>`<label class="opt matopt"><input type="radio" name="leather" id="leather-${it.id}" value="${it.id}"${it.id===S.leather?" checked":""}><span>${thumb(it)}<b>${it.name}</b><em>${it.desc}</em></span></label>`).join("")}</div>`).join("");
   $("leather").onchange = e => { S.leather=e.target.value; render(); };
+  // Descrierea materialului ales: finisajul pielii și covorașul de protecție
+  const info=(title,text,pros)=>`<b>${title}</b>${text?`<p>${text}</p>`:""}${pros&&pros.length?`<ul>${pros.map(x=>`<li>${x}</li>`).join("")}</ul>`:""}`;
+  const fi_=FINISH_INFO[l.finish]||{};
+  $("finInfo").innerHTML = info(FINISH_NAMES[l.finish], fi_.text, fi_.pros);
+  const pp=PROT.find(x=>x.id===S.prot);
+  $("protInfo").innerHTML = pp && S.salon!=="none" ? info(pp.name, pp.details, pp.pros) : "";
+  $("protInfo").hidden = !$("protInfo").innerHTML;
   $("matCap").textContent = l.tex ? `Material real: ${l.name.toLowerCase()}${l.finish==="lucios"?" (luciu simulat)":""}` : "Previzualizare orientativă a culorilor";
   $("mat").innerHTML=matSVG(l,S.salon==="cu" && c.only!=="full","main");
 

@@ -254,3 +254,12 @@ footer{margin-top:40px;border-top:1px dashed var(--line);padding-top:16px;font-s
 .promomsg{margin:-4px 0 0;font-size:13px}
 .promomsg.ok{color:var(--ok)} .promomsg.err{color:var(--accent)}
 .lines .pline{color:var(--ok);font-weight:600}
+
+/* Descrierea materialului ales */
+.minfo{background:var(--bg);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:12px 14px;display:grid;gap:6px}
+.minfo b{font-size:15px}
+.minfo p{margin:0;font-size:14px;color:var(--muted)}
+.minfo ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.minfo li{font-size:13px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+.minfo li::before{content:"✓ ";color:var(--ok);font-weight:700}
+#protInfo{margin-top:12px}

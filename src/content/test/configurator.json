@@ -37,6 +37,24 @@
     "mat": "Piele mat",
     "lucios": "Piele lucioasă"
   },
+  "finishInfo": {
+    "mat": {
+      "text": "Pielea mată arată solid și elegant, fără luciu. Dă salonului un aspect sobru, ca la mașinile premium.",
+      "pros": [
+        "Aspect solid și elegant",
+        "Fără reflexii, se potrivește cu orice interior",
+        "Aceeași structură în 5 straturi ca la toate covorașele noastre"
+      ]
+    },
+    "lucios": {
+      "text": "Pielea lucioasă este mai rezistentă și se șterge mai ușor: noroiul, apa și sarea de pe încălțăminte se curăță cu o cârpă umedă.",
+      "pros": [
+        "Mai rezistentă la uzură",
+        "Se șterge cel mai ușor",
+        "Aspect lucios, elegant"
+      ]
+    }
+  },
   "leather": [
     {
       "id": "m1",
@@ -220,6 +238,12 @@
       "id": "plastic",
       "name": "Plastic cu fire",
       "desc": "Rezistent la uzură, se spală cu apă cu presiune",
+      "details": "Covoraș cu fire tari din plastic, pus peste pielea eco. Ține murdăria în fire și protejează pielea de tocuri și de uzură.",
+      "pros": [
+        "Universal pentru iarnă și vară",
+        "Cel mai rezistent la uzură",
+        "Se spală simplu, cu apă cu presiune"
+      ],
       "pricePerMeter": 1000,
       "colors": [
         {
@@ -256,6 +280,12 @@
       "id": "moale",
       "name": "Plastic cu fire moi",
       "desc": "Strânge mult praf și gunoi, pentru iarnă și vară",
+      "details": "Covoraș cu fire moi din plastic. Strânge foarte mult praf și gunoi, așa că salonul rămâne mai curat.",
+      "pros": [
+        "Absoarbe mult praf și gunoi",
+        "Universal pentru iarnă și vară",
+        "Se spală ușor"
+      ],
       "pricePerMeter": 600,
       "colors": [
         {
@@ -280,6 +310,12 @@
       "id": "mocheta",
       "name": "Mochetă premium 1,8 mm",
       "desc": "Cu strat de cauciuc dedesubt, nu trece apa",
+      "details": "Mochetă premium de 1,8 mm, cu un strat de cauciuc dedesubt care nu lasă apa să treacă prin ea.",
+      "pros": [
+        "Strat de cauciuc dedesubt: apa nu trece",
+        "Mochetă groasă, de 1,8 mm",
+        "Aspect de covor premium"
+      ],
       "pricePerMeter": 1600,
       "colors": [
         {
@@ -300,6 +336,12 @@
       "id": "none",
       "name": "Fără",
       "desc": "Doar pielea eco",
+      "details": "Doar covorașele din piele eco, fără covoraș de protecție deasupra. Prețul scade, iar pielea o ștergi direct.",
+      "pros": [
+        "Preț mai mic",
+        "Se vede toată pielea și cusătura",
+        "Pielea se șterge direct cu o cârpă"
+      ],
       "pricePerMeter": 0,
       "colors": []
     }
