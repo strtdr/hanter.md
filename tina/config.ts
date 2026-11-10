@@ -397,6 +397,8 @@ export default defineConfig({
               { type: 'string', name: 'ctaSecondary', label: 'Buton secundar' },
               { type: 'string', name: 'leatherCombos', label: 'Număr combinații de piele' },
               { type: 'string', name: 'imageCaption', label: 'Text sub imagine' },
+              { type: 'string', name: 'googleRating', label: 'Nota pe Google (ex. 4,4) — lasă gol ca să ascunzi' },
+              { type: 'string', name: 'googleReviews', label: 'Număr recenzii Google' },
             ],
           },
           {
@@ -519,6 +521,7 @@ export default defineConfig({
               { type: 'string', name: 'moldovaText', label: 'Text Moldova', ui: { component: 'textarea' } },
               { type: 'string', name: 'workshopAddress', label: 'Adresa atelierului (apare doar dacă e completată)' },
               { type: 'string', name: 'mapUrl', label: 'Link Google Maps' },
+              { type: 'string', name: 'hours', label: 'Program atelier (un rând pe zi)', list: true },
               { type: 'string', name: 'visitNote', label: 'Notă: sună înainte (se adaugă telefonul automat)' },
               { type: 'string', name: 'europeTitle', label: 'Titlu Europa' },
               { type: 'string', name: 'europeText', label: 'Text Europa', ui: { component: 'textarea' } },

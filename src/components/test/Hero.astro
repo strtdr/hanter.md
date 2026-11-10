@@ -18,6 +18,11 @@ const h = landing.hero;
       <div><b id="fModels">{models}</b><span>modele de mașini</span></div>
       <div><b id="fPat">{patterns}</b><span>tipare exacte</span></div>
       <div><b>{h.leatherCombos}</b><span>combinații de piele</span></div>
+      {h.googleRating && (
+        <a class="gfact" href={landing.delivery.mapUrl} target="_blank" rel="noopener">
+          <b>{h.googleRating}<i aria-hidden="true">★</i></b><span>{h.googleReviews} recenzii pe Google</span>
+        </a>
+      )}
     </div>
   </div>
   <div class="heroart">
