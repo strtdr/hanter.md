@@ -1,4 +1,5 @@
 import "./nav.js";
+import { updateWork } from "./gallery.js";
 import { findPromo, promoLabel } from "./price.js";
 import { CARS, LEATHER, PHONE } from "./data.js";
 import { $, S, m2 } from "./state.js";
@@ -36,7 +37,7 @@ $("fly").addEventListener("click",e=>{ if(e.target.closest("#flyGo")) return; $(
 render();
 const heroL = LEATHER.find(x=>x.id==="m2") || LEATHER.find(x=>x.tex) || LEATHER[0];
 if(heroL.tex) document.querySelector(".l1").classList.add("tx-"+heroL.tex);
-$("heroMat").innerHTML = matSVG(heroL, true, "hero");
+if($("heroMat")) $("heroMat").innerHTML = matSVG(heroL, true, "hero");
 
 // Cod de reducere: din câmp sau din link (?cod=TIKTOK); se ține minte 30 de zile pe acest telefon/calculator
 function initPromo(){
@@ -57,3 +58,7 @@ function initPromo(){
   if(!start){ try{ const s=JSON.parse(localStorage.getItem(KEY)||"null"); if(s && Date.now()-s.t<30*864e5) start=s.c; }catch(e){} }
   if(start) apply(start,true);
 }
+
+// pozele lucrărilor pentru mașina aleasă
+const syncWork = () => setTimeout(() => updateWork(S.brand, S.model), 0);
+$("brand").addEventListener("change", syncWork); $("model").addEventListener("change", syncWork); syncWork();

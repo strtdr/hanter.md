@@ -1,0 +1,31 @@
+---
+// „Lucrările noastre”: poze reale + clip. Date: src/content/test/gallery.json (TinaCMS → Test · Lucrări).
+// Aceleași poze apar și în configurator, când clientul alege marca și modelul respectiv.
+import gallery from '../../content/test/gallery.json';
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const u = (p?: string) => (p ? base + p.replace(/^\//, '') : '');
+---
+<section class="blk" id="lucrari">
+  <h2>{gallery.title}</h2>
+  <p class="sub2">{gallery.intro}</p>
+  <div class="works">
+    {gallery.video && (
+      <figure class="work vid">
+        <video src={u(gallery.video)} poster={u(gallery.videoPoster)} muted loop playsinline autoplay preload="metadata" aria-label={gallery.videoCaption}></video>
+        <figcaption>{gallery.videoCaption}</figcaption>
+      </figure>
+    )}
+    {gallery.items.map((it, i) => (
+      <button type="button" class="work" data-work={i} aria-label={`Mărește: ${it.brand} ${it.model}, ${it.title}`}>
+        <img src={u(it.thumb || it.image)} alt="" loading="lazy" width="390" height="520" />
+        <span class="wcap"><b>{it.brand} {it.model}</b>{it.title}</span>
+      </button>
+    ))}
+  </div>
+</section>
+<dialog class="lb" id="lb" aria-label="Lucrare Hanter.md">
+  <button type="button" class="lbx" id="lbClose" aria-label="Închide">×</button>
+  <button type="button" class="lbn lbp" id="lbPrev" aria-label="Poza anterioară">‹</button>
+  <figure><img id="lbImg" alt="" /><figcaption id="lbCap"></figcaption></figure>
+  <button type="button" class="lbn lbnx" id="lbNext" aria-label="Poza următoare">›</button>
+</dialog>

@@ -1,0 +1,107 @@
+{
+  "title": "Lucrările noastre",
+  "intro": "Covorașe Hanter.md în mașinile clienților. Fiecare set e croit după tiparul mașinii respective.",
+  "video": "/video/hero-mercedes-ml.mp4",
+  "videoPoster": "/video/hero-mercedes-ml.webp",
+  "videoCaption": "Mercedes-Benz ML · salon cu praguri și covoraș de protecție",
+  "items": [
+    {
+      "brand": "Toyota",
+      "model": "Land Cruiser Prado",
+      "title": "Portbagaj full",
+      "image": "/images/lucrari/toyota-prado-portbagaj.webp",
+      "thumb": "/images/lucrari/toyota-prado-portbagaj-mic.webp"
+    },
+    {
+      "brand": "Skoda",
+      "model": "Kodiaq",
+      "title": "Salon, cu praguri",
+      "image": "/images/lucrari/skoda-kodiaq-sofer.webp",
+      "thumb": "/images/lucrari/skoda-kodiaq-sofer-mic.webp"
+    },
+    {
+      "brand": "Skoda",
+      "model": "Kodiaq",
+      "title": "Salon, pasager",
+      "image": "/images/lucrari/skoda-kodiaq-pasager.webp",
+      "thumb": "/images/lucrari/skoda-kodiaq-pasager-mic.webp"
+    },
+    {
+      "brand": "Skoda",
+      "model": "Kodiaq",
+      "title": "Salon, rândul 2",
+      "image": "/images/lucrari/skoda-kodiaq-spate.webp",
+      "thumb": "/images/lucrari/skoda-kodiaq-spate-mic.webp"
+    },
+    {
+      "brand": "Skoda",
+      "model": "Kodiaq",
+      "title": "Portbagaj full",
+      "image": "/images/lucrari/skoda-kodiaq-portbagaj.webp",
+      "thumb": "/images/lucrari/skoda-kodiaq-portbagaj-mic.webp"
+    },
+    {
+      "brand": "Skoda",
+      "model": "Kodiaq",
+      "title": "Portbagaj full",
+      "image": "/images/lucrari/skoda-kodiaq-portbagaj-2.webp",
+      "thumb": "/images/lucrari/skoda-kodiaq-portbagaj-2-mic.webp"
+    },
+    {
+      "brand": "BMW",
+      "model": "Seria 5",
+      "title": "Salon, protecție cu dungi M",
+      "image": "/images/lucrari/bmw-seria5-sofer.webp",
+      "thumb": "/images/lucrari/bmw-seria5-sofer-mic.webp"
+    },
+    {
+      "brand": "Mercedes-Benz",
+      "model": "ML",
+      "title": "Salon, cu praguri",
+      "image": "/images/lucrari/mercedes-ml-sofer.webp",
+      "thumb": "/images/lucrari/mercedes-ml-sofer-mic.webp"
+    },
+    {
+      "brand": "Mercedes-Benz",
+      "model": "ML",
+      "title": "Salon, rândul 2",
+      "image": "/images/lucrari/mercedes-ml-spate.webp",
+      "thumb": "/images/lucrari/mercedes-ml-spate-mic.webp"
+    },
+    {
+      "brand": "Mercedes-Benz",
+      "model": "ML",
+      "title": "Portbagaj full",
+      "image": "/images/lucrari/mercedes-ml-portbagaj.webp",
+      "thumb": "/images/lucrari/mercedes-ml-portbagaj-mic.webp"
+    },
+    {
+      "brand": "Mercedes-Benz",
+      "model": "E-Class Coupe",
+      "title": "Salon, pasager",
+      "image": "/images/lucrari/mercedes-e-coupe-pasager.webp",
+      "thumb": "/images/lucrari/mercedes-e-coupe-pasager-mic.webp"
+    },
+    {
+      "brand": "Mercedes-Benz",
+      "model": "E-Class Coupe",
+      "title": "Salon, șofer",
+      "image": "/images/lucrari/mercedes-e-coupe-sofer.webp",
+      "thumb": "/images/lucrari/mercedes-e-coupe-sofer-mic.webp"
+    },
+    {
+      "brand": "Mercedes-Benz",
+      "model": "E-Class Coupe",
+      "title": "Salon, rândul 2",
+      "image": "/images/lucrari/mercedes-e-coupe-spate.webp",
+      "thumb": "/images/lucrari/mercedes-e-coupe-spate-mic.webp"
+    },
+    {
+      "brand": "Volvo",
+      "model": "XC60",
+      "title": "Salon, cu praguri",
+      "image": "/images/lucrari/volvo-xc60-sofer.webp",
+      "thumb": "/images/lucrari/volvo-xc60-sofer-mic.webp"
+    }
+  ]
+}

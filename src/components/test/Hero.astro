@@ -4,6 +4,8 @@ import landing from '../../content/test/landing.json';
 interface Props { models: string; patterns: string }
 const { models, patterns } = Astro.props;
 const h = landing.hero;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const heroImg = h.image ? base + h.image.replace(/^\//, '') : '';
 ---
 <div class="land">
   <div>
@@ -25,8 +27,10 @@ const h = landing.hero;
       )}
     </div>
   </div>
-  <div class="heroart">
-    <svg id="heroMat" viewBox="0 0 360 230" role="img" aria-label="Covorașe Hanter.md"></svg>
+  <div class={heroImg ? 'heroart photo' : 'heroart'}>
+    {heroImg
+      ? <img src={heroImg} alt={h.imageCaption} width="1050" height="1400" fetchpriority="high" />
+      : <svg id="heroMat" viewBox="0 0 360 230" role="img" aria-label="Covorașe Hanter.md"></svg>}
     <div class="cap">{h.imageCaption}</div>
   </div>
 </div>
