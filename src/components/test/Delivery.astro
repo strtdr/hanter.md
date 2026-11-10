@@ -5,7 +5,7 @@ import landing from '../../content/test/landing.json';
 import cfg from '../../content/test/configurator.json';
 const d = landing.delivery;
 const tel = cfg.phone.replace(/[^\d+]/g, '');
-const telShow = cfg.phone.replace(/^\+373(\d{3})(\d{2})(\d{3})$/, '+373 $1 $2 $3');
+const telShow = cfg.phoneLocal || cfg.phone;
 const lei = (n: number) => n.toLocaleString('ro-MD').replace(/[\s,. ]/g, ' ') + ' lei';
 ---
 <section class="blk" id="livrare">

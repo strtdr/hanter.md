@@ -399,3 +399,32 @@ body.scrolled .navbtn{display:flex}
 
 /* Pictogramele din „Ce câștigi”: aceeași mărime, pe pătrat alb */
 .ben .bic{width:64px;height:64px;display:block;background:#fff;border-radius:12px;padding:6px;box-sizing:border-box;object-fit:contain;border:1px solid var(--line)}
+
+/* Telefonul din antet */
+a.logo{color:inherit;text-decoration:none}
+.tcall{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;background:var(--accent);color:#fff;font-weight:700;font-size:15px;text-decoration:none;white-space:nowrap;font-variant-numeric:tabular-nums}
+.tcall:hover{filter:brightness(1.08)}
+.tcall:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.navmenu a.mcall{margin-top:4px;border-top:1px solid var(--line);border-radius:0 0 8px 8px;color:var(--accent)}
+@media (max-width:760px){
+  header.top{flex-wrap:nowrap}
+  .tcall{padding:8px 12px;font-size:14px}
+}
+
+/* Pagina principală (de pe „Starea comenzii”) */
+.back{display:inline-flex;align-items:center;gap:6px;margin-bottom:14px;padding:9px 14px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);font-weight:600;font-size:14px;text-decoration:none}
+.back:hover{border-color:var(--ink)}
+/* antet pe un singur rând: logo · meniu · telefon */
+header.top{flex-wrap:nowrap}
+header.top nav.top{flex:1;min-width:0;justify-content:flex-end;gap:16px}
+@media (max-width:1240px){ header.top nav.top{gap:12px;font-size:13px} }
+@media (max-width:1100px){
+  header.top nav.top{display:none}
+  .navbtn{display:flex}
+  header.top{padding-right:56px}
+  header.top .tcall{margin-left:auto}
+}
+@media (max-width:760px){ header.top{padding-right:60px} }
+@media (max-width:430px){ .logo{font-size:24px} header.top{gap:10px} .tcall{padding:7px 10px;font-size:13px;gap:6px} }
+@media (max-width:370px){ .logo{font-size:22px} .tcall{font-size:12px;padding:7px 9px} }
+@media (max-width:340px){ .tcall span{display:none} .tcall{padding:9px} }

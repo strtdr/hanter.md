@@ -2,7 +2,12 @@
 // Antetul paginii cu meniul de ancore. `home` = adresa paginii principale, când antetul e pe altă pagină.
 interface Props { home?: string }
 const { home = '' } = Astro.props;
+import cfg from '../../content/test/configurator.json';
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+// Telefonul: afișat local (079 …), sună pe numărul internațional, ca să meargă și de peste hotare
+const tel = cfg.phone.replace(/[^\d+]/g, '');
+const telShow = cfg.phoneLocal || cfg.phone;
+const homeUrl = `${base}test/`;
 const links = [
   ['#beneficii', 'Beneficii'],
   ['#solutia', 'Soluția'],
@@ -13,16 +18,22 @@ const links = [
   ['#livrare', 'Livrare'],
   ['#configurator', 'Configurator'],
 ].map(([h, l]) => [home + h, l]).concat([[`${base}test/comanda/`, 'Starea comenzii']]);
+const menu = (home ? [[homeUrl, 'Pagina principală']] : []).concat(links);
 ---
 <header class="top" id="topbar">
-  <div class="logo">Hanter<span>.md</span></div>
+  <a class="logo" href={homeUrl} aria-label="Hanter.md, pagina principală">Hanter<span>.md</span></a>
   <nav class="top" aria-label="Secțiuni">
     {links.map(([href, label]) => <a href={href}>{label}</a>)}
   </nav>
+  <a class="tcall" href={`tel:${tel}`} aria-label={`Sună-ne: ${telShow}`}>
+    <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+    <span>{telShow}</span>
+  </a>
 </header>
 <button type="button" class="navbtn" id="navBtn" aria-label="Meniu" aria-expanded="false" aria-controls="navMenu">
   <span></span><span></span><span></span>
 </button>
 <nav class="navmenu" id="navMenu" aria-label="Meniu" hidden>
-  {links.map(([href, label]) => <a href={href}>{label}</a>)}
+  {menu.map(([href, label]) => <a href={href}>{label}</a>)}
+  <a class="mcall" href={`tel:${tel}`}>Sună: {telShow}</a>
 </nav>

@@ -8,6 +8,7 @@ const C = raw.cfg;
 export const CARS = raw.cars;
 export const GEN = raw.gens;
 export const PHONE = C.phone;
+export const PHONE_LOCAL = C.phoneLocal || C.phone;
 export const ORDER_URL = C.orderUrl || "";
 export const ROUND = C.roundTo || 50;
 export const FINISH_NAMES = C.finishNames;

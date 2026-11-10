@@ -194,6 +194,7 @@ export default defineConfig({
         },
         fields: [
           { type: 'string', name: 'phone', label: 'Telefon (Viber / WhatsApp), ex. +37379089999', required: true },
+          { type: 'string', name: 'phoneLocal', label: 'Telefon afișat pe site, ex. 079 089 999 (la apăsare sună pe numărul de mai sus)' },
           { type: 'string', name: 'orderUrl', label: 'Adresa Google Apps Script pentru comenzi' },
           { type: 'number', name: 'roundTo', label: 'Rotunjire preț (lei)', required: true },
           {

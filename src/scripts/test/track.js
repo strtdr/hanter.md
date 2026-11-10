@@ -1,7 +1,7 @@
 import "./nav.js";
 // Pagina „Starea comenzii”: clientul scrie nr. comenzii + ultimele 4 cifre ale telefonului,
 // iar Google Apps Script-ul (apps-script/Code.gs → doGet) răspunde cu starea din tabelul „Comenzi”.
-import { CANCEL_POLICY, ORDER_URL, PHONE, STATUSES } from "./data.js";
+import { CANCEL_POLICY, ORDER_URL, PHONE, PHONE_LOCAL, STATUSES } from "./data.js";
 
 const $ = id => document.getElementById(id);
 const steps = STATUSES.filter(s => !s.cancel);
@@ -67,7 +67,7 @@ async function check(nr, tel) {
 // Telefonul pentru întrebări
 const tel = PHONE.replace(/[^\d+]/g, "");
 $("tCall").href = `tel:${tel}`;
-$("tCall").textContent = PHONE.replace(/^\+373(\d{3})(\d{2})(\d{3})$/, "+373 $1 $2 $3");
+$("tCall").textContent = PHONE_LOCAL;
 
 $("trf").addEventListener("submit", e => {
   e.preventDefault();

@@ -1,7 +1,9 @@
 ---
 // Formularul „Starea comenzii” + pașii comenzii. Logica: src/scripts/test/track.js
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 <section class="blk track" id="stare">
+  <a class="back" href={`${base}test/`}>← Pagina principală</a>
   <h2>Starea comenzii</h2>
   <p class="sub2">Scrie numărul comenzii (îl primești după ce trimiți comanda, de exemplu H-7K2QX) și ultimele 4 cifre ale telefonului cu care ai comandat.</p>
   <form class="trf" id="trf" novalidate>

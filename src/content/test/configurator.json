@@ -1,5 +1,6 @@
 {
   "phone": "+37379089999",
+  "phoneLocal": "079 089 999",
   "orderUrl": "https://script.google.com/macros/s/AKfycbwCjyhosxkZA2WDdSZyHfE2fmey9sk-wlEb57FQpqF1CM8coePHJtBjHbT1iaQqShbx/exec",
   "roundTo": 50,
   "noProtectionDiscount": {
