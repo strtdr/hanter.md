@@ -428,3 +428,11 @@ header.top nav.top{flex:1;min-width:0;justify-content:flex-end;gap:16px}
 @media (max-width:430px){ .logo{font-size:24px} header.top{gap:10px} .tcall{padding:7px 10px;font-size:13px;gap:6px} }
 @media (max-width:370px){ .logo{font-size:22px} .tcall{font-size:12px;padding:7px 9px} }
 @media (max-width:340px){ .tcall span{display:none} .tcall{padding:9px} }
+/* ecrane înguste: telefonul sub HANTER.MD */
+@media (max-width:760px){
+  header.top{flex-direction:column;align-items:flex-start;gap:8px;padding-right:60px}
+  header.top .tcall{margin-left:0}
+  .logo{font-size:30px}
+  .tcall{padding:8px 14px;font-size:15px}
+  .tcall span{display:inline}
+}
