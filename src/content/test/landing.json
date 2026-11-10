@@ -58,27 +58,27 @@
   },
   "materials": {
     "title": "Din ce e făcut covorașul",
-    "intro": "Un covoraș Hanter.md are cinci straturi. Fiecare are rolul lui: arată bine, e moale sub picior, nu lasă apa să treacă și stă fix pe loc.",
+    "intro": "Un covoraș Hanter.md are cinci straturi și fiecare are o treabă precisă: arată bine, e moale sub picior, oprește apa, își ține forma și stă fix pe loc.",
     "layers": [
       {
         "title": "Piele eco",
-        "text": "Stratul de deasupra, cu cusătură în romb sau pătrat. Se șterge ușor cu o cârpă umedă și arată îngrijit în orice interior."
+        "text": "Stratul pe care îl vezi, cu cusătură în romb sau pătrat. Nu lasă apa să treacă și se șterge cu o cârpă umedă."
       },
       {
         "title": "Paralon (burete moale)",
-        "text": "Face covorașul moale și plăcut sub picior și dă volum cusăturii."
+        "text": "Face covorașul moale sub picior și dă volum cusăturii, ca să arate plin, nu plat."
       },
       {
         "title": "Peliculă impermeabilă",
-        "text": "Nu lasă apa, zăpada topită și noroiul să treacă spre podeaua mașinii."
+        "text": "Oprește apa, zăpada topită și noroiul. Mocheta originală a mașinii rămâne uscată și curată."
       },
       {
         "title": "Burete mai tare",
-        "text": "Ține forma covorașului, ca să nu se îndoaie și să nu se deformeze în timp."
+        "text": "Ține forma covorașului: nu se îndoaie sub pedale și nu se deformează în timp."
       },
       {
         "title": "Plasă antiderapantă",
-        "text": "Se agață de mocheta sau podeaua originală a mașinii, așa că covorașul nu alunecă sub pedale."
+        "text": "Se prinde de mocheta originală, așa că covorașul stă fix și nu alunecă sub pedale."
       }
     ],
     "protectionTitle": "Covorașul de protecție",
@@ -97,6 +97,36 @@
         "text": "are dedesubt un strat de cauciuc care nu lasă apa să treacă."
       }
     ]
+  },
+  "coverage": {
+    "title": "Cât acoperă covorașele",
+    "intro": "Alegi cât din podea vrei să acoperi. Orice variantă se croiește după tiparul exact al mașinii tale.",
+    "items": [
+      {
+        "title": "Cu acoperire praguri",
+        "text": "Cea mai completă variantă: acoperă podeaua, pragurile și suprafețele din plastic de lângă ele.",
+        "points": [
+          "Pe lateral se fixează cu bandă adezivă, nu alunecă",
+          "Buzunar pentru telefon la șofer și la pasager"
+        ]
+      },
+      {
+        "title": "Fără acoperire praguri",
+        "text": "Acoperă aproape toată mocheta, până la plastic.",
+        "points": [
+          "Mai simplu și mai ieftin",
+          "Mocheta e protejată aproape în întregime"
+        ]
+      },
+      {
+        "title": "Portbagaj",
+        "text": "Jos, jos cu spătar, sau full: podeaua, spătarul banchetei și părțile laterale.",
+        "points": [
+          "Spătarul și părțile laterale se fixează cu bandă adezivă"
+        ]
+      }
+    ],
+    "note": "Covorașele de protecție se prind cu clipse la fiecare loc, nu doar la șofer și pasager."
   },
   "steps": {
     "title": "Cum comanzi",

@@ -248,7 +248,7 @@ footer{margin-top:40px;border-top:1px dashed var(--line);padding-top:16px;font-s
 
 /* Cod de reducere */
 .promo{display:flex;gap:8px}
-.promo input{flex:1;min-width:0;font:inherit;padding:10px 12px;border:1px dashed var(--line);border-radius:8px;background:var(--bg);color:var(--ink);text-transform:uppercase}
+.promo input{flex:1 1 0;min-width:0;width:0;font:inherit;padding:10px 12px;border:1px dashed var(--line);border-radius:8px;background:var(--bg);color:var(--ink);text-transform:uppercase}
 .promo input::placeholder{text-transform:none;color:var(--muted)}
 .promo button{font:inherit;font-weight:600;padding:10px 14px;border-radius:8px;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
 .promomsg{margin:-4px 0 0;font-size:13px}
@@ -263,3 +263,9 @@ footer{margin-top:40px;border-top:1px dashed var(--line);padding-top:16px;font-s
 .minfo li{font-size:13px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
 .minfo li::before{content:"✓ ";color:var(--ok);font-weight:700}
 #protInfo{margin-top:12px}
+
+/* Variante de acoperire */
+#acoperire .term .ic{font-family:var(--mono, monospace);font-size:12px;color:var(--accent)}
+.term ul.ck li{display:block;border:0;padding:0 0 0 18px;position:relative;color:var(--ink)}
+.term ul.ck li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:700}
+.covnote{margin:14px 0 0;padding:12px 14px;border-left:3px solid var(--accent);background:var(--surface);border-radius:0 8px 8px 0;font-size:14px}

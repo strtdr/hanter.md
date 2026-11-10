@@ -352,12 +352,12 @@
     {
       "id": "cu",
       "name": "Cu acoperire praguri",
-      "desc": "Protejează și pragurile ușilor"
+      "desc": "Podea, praguri și plastic · buzunar pentru telefon"
     },
     {
       "id": "fara",
       "name": "Fără acoperire praguri",
-      "desc": "Doar podeaua"
+      "desc": "Aproape toată mocheta, până la plastic"
     },
     {
       "id": "none",
@@ -376,14 +376,14 @@
     {
       "id": "spatar",
       "name": "Jos cu spătar",
-      "desc": "Podea + spatele banchetei",
+      "desc": "Podea + spătar, prins cu bandă adezivă",
       "feeMat": 500,
       "feeGlossy": 700
     },
     {
       "id": "full",
       "name": "Full",
-      "desc": "Podea, spătar și părțile laterale",
+      "desc": "Podea, spătar și laterale, prinse cu bandă adezivă",
       "feeMat": 1700,
       "feeGlossy": 1900
     },
