@@ -467,6 +467,28 @@ export default defineConfig({
           },
           {
             type: 'object',
+            name: 'coverage',
+            label: 'Cât acoperă covorașele',
+            fields: [
+              { type: 'string', name: 'title', label: 'Titlu' },
+              { type: 'string', name: 'intro', label: 'Introducere', ui: { component: 'textarea' } },
+              {
+                type: 'object',
+                name: 'items',
+                label: 'Variante',
+                list: true,
+                ui: { itemProps: (item) => ({ label: item.title }) },
+                fields: [
+                  { type: 'string', name: 'title', label: 'Denumire', required: true },
+                  { type: 'string', name: 'text', label: 'Descriere', ui: { component: 'textarea' } },
+                  { type: 'string', name: 'points', label: 'Avantaje / fixare', list: true },
+                ],
+              },
+              { type: 'string', name: 'note', label: 'Notă jos (covorașe de protecție)', ui: { component: 'textarea' } },
+            ],
+          },
+          {
+            type: 'object',
             name: 'steps',
             label: 'Cum comanzi',
             fields: [

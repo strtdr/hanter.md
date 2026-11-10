@@ -1,0 +1,20 @@
+---
+// Variantele de acoperire și cum se fixează covorașele. Texte: landing.json → coverage (TinaCMS)
+import landing from '../../content/test/landing.json';
+const c = landing.coverage;
+---
+<section class="blk" id="acoperire">
+  <h2>{c.title}</h2>
+  <p class="sub2">{c.intro}</p>
+  <div class="terms">
+    {c.items.map((it, i) => (
+      <div class="term">
+        <span class="ic">{String(i + 1).padStart(2, '0')}</span>
+        <b>{it.title}</b>
+        <p>{it.text}</p>
+        {it.points && it.points.length > 0 && <ul class="ck">{it.points.map((p) => <li>{p}</li>)}</ul>}
+      </div>
+    ))}
+  </div>
+  {c.note && <p class="covnote">{c.note}</p>}
+</section>
