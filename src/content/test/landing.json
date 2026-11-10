@@ -119,6 +119,17 @@
       }
     ]
   },
+  "delivery": {
+    "title": "Avans, termen și livrare",
+    "intro": "Fiecare set se croiește pe comanda ta, de aceea începem lucrul după avans.",
+    "depositTitle": "Avans",
+    "productionTitle": "Gata în",
+    "moldovaTitle": "În Moldova",
+    "moldovaText": "Cel mai bine te apropii la atelier și ridici covorașele direct de la noi.",
+    "workshopAddress": "",
+    "europeTitle": "În Europa",
+    "europeText": "Trimitem prin transportul de colete, oriunde în Europa."
+  },
   "configurator": {
     "title": "Configurator și preț",
     "intro": "Alege mașina și covorașele. Prețul total e mereu în colțul din dreapta jos al ecranului."

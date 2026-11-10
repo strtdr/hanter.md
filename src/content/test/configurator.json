@@ -6,6 +6,12 @@
     "fiveSeats": 700,
     "sevenSeats": 900
   },
+  "deposit": {
+    "salon": 2000,
+    "withTrunkBack": 3000,
+    "withTrunkFull": 4000
+  },
+  "productionDays": "2–7",
   "salonFee": {
     "withSills": [
       1700,

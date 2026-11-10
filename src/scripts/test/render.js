@@ -1,8 +1,8 @@
-import { CARS, FINISH_NAMES, LEATHER, PHONE, PROT, SALON, TRUNK, TRUNK_ADD } from "./data.js";
+import { CARS, FINISH_NAMES, LEATHER, PHONE, PROT, SALON, TRUNK, TRUNK_ADD, PRODUCTION_DAYS } from "./data.js";
 import { $, S, fmt, m2 } from "./state.js";
 import { PT, YR, brands, car, curGen, fuelClash, fuelOpts, gens, hasCsj, salonList, trunkList, vtags } from "./catalog.js";
 import { leatherSw, matSVG, protSw, thumb } from "./visuals.js";
-import { calc, salonName } from "./price.js";
+import { calc, salonName, deposit } from "./price.js";
 // Afișarea configuratorului
 export function fillSelect(sel, items, val){ sel.innerHTML = items.map(([v,l])=>`<option value="${v}"${String(v)===String(val)?" selected":""}>${l}</option>`).join(""); }
 export function radios(el, name, items, extra, disabled){
@@ -97,6 +97,8 @@ export function render(){
   $("carTitle").textContent=`${S.brand} ${S.model}` + (curGen(c)[1] ? ` · ${curGen(c)[0]}` : "");
   $("lines").innerHTML = r.lines.length ? r.lines.map(([k,t])=>`<div${k?` class="${k}"`:""}><span>${t}</span><span></span></div>`).join("") + `<div><span>${leatherSw(l)}${FINISH_NAMES[l.finish]}: ${l.name.toLowerCase()}, ${l.desc.toLowerCase()}</span><span></span></div>` : `<div><span>Alege covorașe pentru salon sau portbagaj.</span><span></span></div>`;
   $("total").textContent= r.onRequest ? "La cerere" : fmt(r.total);
+  const dep = deposit(r);
+  $("dep").innerHTML = dep ? `Avans la comandă: <b>${fmt(dep)}</b>${PRODUCTION_DAYS?` · gata în ${PRODUCTION_DAYS} zile`:""}` : "";
   $("conf").className = "note" + (r.estimated||r.onRequest?" warn":"");
   $("conf").textContent = r.onRequest
     ? "Încă nu avem consumul de material pentru acest model. Trimite comanda și îți spunem prețul exact."
@@ -116,6 +118,7 @@ export function buildMsg(){
   parts.push(`Material: ${FINISH_NAMES[r.l.finish].toLowerCase()}, ${r.l.name.toLowerCase()}, ${r.l.desc.toLowerCase()}`);
   if(S.fuel && ((V.sv && S.salon!=="none" && fuelClash(V.sv[0])) || (V.tv && S.trunk!=="none" && fuelClash(V.tv[0])))) parts.push(`Atenție: tiparul din configurator e pentru altă motorizare decât ${S.fuel.toLowerCase()} — vă rog să confirmați mărimile.`);
   parts.push(r.onRequest ? `Preț: la cerere` : `Preț din configurator: ${fmt(r.total)}`);
+  if(deposit(r)) parts.push(`Avans: ${fmt(deposit(r))}`);
   const t=parts.join("\n");
   $("msg").textContent=t;
   const digits=PHONE.replace(/\D/g,"");

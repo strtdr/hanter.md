@@ -1,0 +1,36 @@
+---
+// Avans, termen de fabricare și livrare. Sumele vin din configurator.json (aceleași ca în calculul avansului),
+// textele din landing.json (TinaCMS).
+import landing from '../../content/test/landing.json';
+import cfg from '../../content/test/configurator.json';
+const d = landing.delivery;
+const lei = (n: number) => n.toLocaleString('ro-MD').replace(/[\s,. ]/g, ' ') + ' lei';
+---
+<section class="blk" id="livrare">
+  <h2>{d.title}</h2>
+  <p class="sub2">{d.intro}</p>
+  <div class="terms">
+    <div class="term">
+      <b>{d.depositTitle}</b>
+      <ul>
+        <li><span>Salon</span><strong>{lei(cfg.deposit.salon)}</strong></li>
+        <li><span>Salon + portbagaj jos sau cu spătar</span><strong>{lei(cfg.deposit.withTrunkBack)}</strong></li>
+        <li><span>Salon + portbagaj full</span><strong>{lei(cfg.deposit.withTrunkFull)}</strong></li>
+      </ul>
+    </div>
+    <div class="term">
+      <b>{d.productionTitle}</b>
+      <p class="big">{cfg.productionDays} zile</p>
+      <p>de la avans până la covorașele gata</p>
+    </div>
+    <div class="term">
+      <b>{d.moldovaTitle}</b>
+      <p>{d.moldovaText}</p>
+      {d.workshopAddress && <p class="addr">{d.workshopAddress}</p>}
+    </div>
+    <div class="term">
+      <b>{d.europeTitle}</b>
+      <p>{d.europeText}</p>
+    </div>
+  </div>
+</section>
