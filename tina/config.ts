@@ -250,6 +250,31 @@ export default defineConfig({
           },
           {
             type: 'object',
+            name: 'finishInfo',
+            label: 'Descriere piele mat / lucioasă (apare în configurator)',
+            fields: [
+              {
+                type: 'object',
+                name: 'mat',
+                label: 'Piele mată',
+                fields: [
+                  { type: 'string', name: 'text', label: 'Descriere', ui: { component: 'textarea' } },
+                  { type: 'string', name: 'pros', label: 'Avantaje', list: true },
+                ],
+              },
+              {
+                type: 'object',
+                name: 'lucios',
+                label: 'Piele lucioasă',
+                fields: [
+                  { type: 'string', name: 'text', label: 'Descriere', ui: { component: 'textarea' } },
+                  { type: 'string', name: 'pros', label: 'Avantaje', list: true },
+                ],
+              },
+            ],
+          },
+          {
+            type: 'object',
             name: 'leather',
             label: 'Piele eco',
             list: true,
@@ -276,6 +301,8 @@ export default defineConfig({
               { type: 'string', name: 'id', label: 'ID (plastic, moale, mocheta, none)', required: true },
               { type: 'string', name: 'name', label: 'Denumire', required: true },
               { type: 'string', name: 'desc', label: 'Descriere scurtă' },
+              { type: 'string', name: 'details', label: 'Descriere în configurator', ui: { component: 'textarea' } },
+              { type: 'string', name: 'pros', label: 'Avantaje', list: true },
               { type: 'number', name: 'pricePerMeter', label: 'Preț pe metru (lei)', required: true },
               {
                 type: 'object',

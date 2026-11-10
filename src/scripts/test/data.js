@@ -11,6 +11,8 @@ export const PHONE = C.phone;
 export const ORDER_URL = C.orderUrl || "";
 export const ROUND = C.roundTo || 50;
 export const FINISH_NAMES = C.finishNames;
+// Descriere + avantaje pe finisaj (mat / lucios)
+export const FINISH_INFO = C.finishInfo || {};
 
 // Fotografii reale ale materialelor: cheia = numele fișierului (ex. negru_bej_romb)
 export const TEX = {};
@@ -20,7 +22,7 @@ export const LEATHER = C.leather.map(l => {
   return { id: l.id, finish: l.finish, name: l.name, desc: l.desc || "", lc: l.leatherColor, tc: l.threadColor, pattern: l.pattern, ppm: l.pricePerMeter, tex };
 });
 // Strat de protecție (salon): preț pe metru
-export const PROT = C.protection.map(p => ({ id: p.id, name: p.name, desc: p.desc || "", ppm: p.pricePerMeter || 0, colors: (p.colors || []).map(c => [c.name, c.css]) }));
+export const PROT = C.protection.map(p => ({ id: p.id, name: p.name, desc: p.desc || "", ppm: p.pricePerMeter || 0, colors: (p.colors || []).map(c => [c.name, c.css]), details: p.details || "", pros: p.pros || [] }));
 // Fără strat de protecție: se scade doar o parte din costul plasticului cu fire
 export const NOPROT_DISCOUNT = seven => seven ? C.noProtectionDiscount.sevenSeats : C.noProtectionDiscount.fiveSeats;
 // Manoperă + accesorii salon (clipse, bandă, călcâi) pe mărimea mașinii: [<1,9 m, ≤2,2 m, mai mare]
