@@ -13,9 +13,15 @@ const links = [
   ['#configurator', 'Configurator'],
 ].map(([h, l]) => [home + h, l]).concat([[`${base}test/comanda/`, 'Starea comenzii']]);
 ---
-<header class="top">
+<header class="top" id="topbar">
   <div class="logo">Hanter<span>.md</span></div>
-  <nav class="top">
+  <nav class="top" aria-label="Secțiuni">
     {links.map(([href, label]) => <a href={href}>{label}</a>)}
   </nav>
 </header>
+<button type="button" class="navbtn" id="navBtn" aria-label="Meniu" aria-expanded="false" aria-controls="navMenu">
+  <span></span><span></span><span></span>
+</button>
+<nav class="navmenu" id="navMenu" aria-label="Meniu" hidden>
+  {links.map(([href, label]) => <a href={href}>{label}</a>)}
+</nav>

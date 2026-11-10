@@ -1,3 +1,4 @@
+import "./nav.js";
 // Pagina „Starea comenzii”: clientul scrie nr. comenzii + ultimele 4 cifre ale telefonului,
 // iar Google Apps Script-ul (apps-script/Code.gs → doGet) răspunde cu starea din tabelul „Comenzi”.
 import { CANCEL_POLICY, ORDER_URL, PHONE, STATUSES } from "./data.js";

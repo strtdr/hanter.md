@@ -1,3 +1,4 @@
+import "./nav.js";
 import { findPromo, promoLabel } from "./price.js";
 import { CARS, LEATHER, PHONE } from "./data.js";
 import { $, S, m2 } from "./state.js";
