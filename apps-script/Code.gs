@@ -63,7 +63,9 @@ function doPost(e) {
   const text = [
     (d.kind === 'model negăsit' ? '🔎 Model negăsit' : '🛒 Comandă nouă ' + id) + ' – Hanter.md',
     'Telefon: ' + (d.phone || '—') + (d.via ? ' (' + d.via + ')' : '') + (d.name ? ' · ' + d.name : ''),
-    'Mașina: ' + [d.car, d.gen, d.fuel].filter(String).join(', '),
+    d.kind === 'model negăsit'
+      ? ['Mașina: ' + (d.car || '—'), d.gen ? 'Anul: ' + d.gen : '', d.fuel ? 'Detalii: ' + d.fuel : '', 'Răspunde clientului cu tiparul și prețul.'].filter(String).join('\n')
+      : 'Mașina: ' + [d.car, d.gen, d.fuel].filter(String).join(', '),
     d.salon ? 'Salon: ' + d.salon + (d.salonVariant ? ' · ' + d.salonVariant : '') : '',
     d.leather ? 'Piele: ' + d.leather : '',
     d.protection ? 'Protecție: ' + d.protection : '',

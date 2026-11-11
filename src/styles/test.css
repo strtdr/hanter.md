@@ -436,3 +436,9 @@ header.top nav.top{flex:1;min-width:0;justify-content:flex-end;gap:16px}
   .tcall{padding:8px 14px;font-size:15px}
   .tcall span{display:inline}
 }
+
+/* „Nu am găsit mașina” */
+#nfSend{margin-top:4px}
+.nf .nfor{margin:12px 0 4px}
+.nf .err{display:block;color:var(--accent);font-size:14px;margin-top:6px}
+.nf .ok{display:block;margin-top:6px}

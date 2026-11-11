@@ -21,16 +21,20 @@ import landing from '../../content/test/landing.json';
       <div class="carinfo" id="carinfo"></div>
       <details class="nf" id="nf">
         <summary>Nu găsești mașina ta în listă? Scrie-ne modelul</summary>
-        <p class="hint">Scrie marca, modelul și anul. Îți răspundem pe Viber sau WhatsApp cu tiparul și prețul.</p>
+        <p class="hint">Scrie marca, modelul și anul. Cererea ajunge direct la noi și îți răspundem cu tiparul și prețul.</p>
         <label class="f" style="margin-bottom:8px">Telefonul tău (ca să-ți răspundem)<input id="nfPhone" type="tel" inputmode="tel" placeholder="ex. 069 123 456" maxlength="20"></label>
         <div class="row nfrow">
           <label class="f">Marca și modelul<input id="nfCar" type="text" placeholder="ex. Toyota Avensis Verso" maxlength="80"></label>
           <label class="f">Anul<input id="nfYear" type="text" inputmode="numeric" placeholder="ex. 2008" maxlength="9"></label>
           <label class="f">Motorizare / detalii<input id="nfMore" type="text" placeholder="ex. hibrid, 7 locuri" maxlength="80"></label>
         </div>
+        <button class="btn" type="button" id="nfSend">Trimite cererea</button>
+        <span class="ok" id="nfSent" hidden>Mulțumim! Cererea a ajuns la noi. Te contactăm în curând.</span>
+        <span class="err" id="nfErr" role="alert" hidden></span>
+        <p class="hint nfor">sau scrie-ne direct:</p>
         <div class="nfbtns">
-          <a class="btn" id="nfWa" href="#" target="_blank" rel="noopener">Trimite pe WhatsApp</a>
-          <button class="btn ghost" type="button" id="nfVb">Trimite pe Viber</button>
+          <a class="btn ghost" id="nfWa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+          <button class="btn ghost" type="button" id="nfVb">Viber</button>
         </div>
         <span class="ok" id="nfOk" hidden>Mesajul e copiat. Lipește-l în chatul de Viber care s-a deschis.</span>
       </details>

@@ -21,9 +21,21 @@ function nfText(){ const car=$("nfCar").value.trim(), y=$("nfYear").value.trim()
   return `Bună ziua! Nu am găsit mașina mea în configuratorul Hanter.md.\nMașina: ${car||"—"}${y?", "+y:""}${m?"\nDetalii: "+m:""}${$("nfPhone").value.trim()?"\nTelefonul meu: "+$("nfPhone").value.trim():""}\nVă rog să-mi spuneți dacă aveți tipar și prețul.`; }
 function nfUpd(){ const d=PHONE.replace(/\D/g,""); $("nfWa").href=`https://wa.me/${d}?text=${encodeURIComponent(nfText())}`; }
 ["nfCar","nfYear","nfMore","nfPhone"].forEach(id=>$(id).addEventListener("input",nfUpd)); nfUpd();
-const nfSend = () => { const ph=$("nfPhone").value.trim(); try{ sendOrder({kind:"model negăsit", page:location.href.split("#")[0], car:$("nfCar").value.trim(), gen:$("nfYear").value.trim(), fuel:$("nfMore").value.trim(), phone:ph, via:"", message:nfText()}).catch(()=>{}); }catch(e){} };
-$("nfWa").addEventListener("click",e=>{ if(!$("nfCar").value.trim()){ e.preventDefault(); $("nfCar").focus(); return; } nfSend(); });
-$("nfVb").onclick=()=>{ if(!$("nfCar").value.trim()){ $("nfCar").focus(); return; } nfSend(); const t=nfText(); try{ navigator.clipboard.writeText(t); }catch(e){} $("nfOk").hidden=false; location.href=`viber://chat?number=%2B${PHONE.replace(/\D/g,"")}`; };
+// „Nu am găsit mașina”: cererea merge în tabelul „Comenzi” și pe Telegram (prin Apps Script)
+let nfDone = "";
+const nfPayload = via => ({kind:"model negăsit", page:location.href.split("#")[0], car:$("nfCar").value.trim(), gen:$("nfYear").value.trim(), fuel:$("nfMore").value.trim(), phone:$("nfPhone").value.trim(), via, message:nfText()});
+const nfSend = (via="") => { const key=nfText(); if(nfDone===key) return Promise.resolve(); nfDone=key; return sendOrder(nfPayload(via)).catch(e=>{ nfDone=""; throw e; }); };
+$("nfSend").onclick = async () => {
+  $("nfErr").hidden = true;
+  if(!$("nfCar").value.trim()){ $("nfErr").textContent="Scrie marca și modelul mașinii."; $("nfErr").hidden=false; $("nfCar").focus(); return; }
+  if($("nfPhone").value.replace(/\D/g,"").length < 8){ $("nfErr").textContent="Scrie telefonul, ca să-ți putem răspunde."; $("nfErr").hidden=false; $("nfPhone").focus(); return; }
+  $("nfSend").disabled = true; $("nfSend").textContent = "Se trimite…";
+  try { await nfSend("telefon"); $("nfSent").hidden=false; $("nfSend").textContent="Cererea e trimisă ✓"; }
+  catch(e){ $("nfSend").disabled=false; $("nfSend").textContent="Trimite cererea"; $("nfErr").textContent="Nu am putut trimite automat. Scrie-ne pe WhatsApp sau Viber, mai jos."; $("nfErr").hidden=false; }
+};
+["nfCar","nfYear","nfMore","nfPhone"].forEach(id=>$(id).addEventListener("input",()=>{ if($("nfSend").disabled && nfDone!==nfText()){ $("nfSend").disabled=false; $("nfSend").textContent="Trimite cererea"; $("nfSent").hidden=true; } }));
+$("nfWa").addEventListener("click",e=>{ if(!$("nfCar").value.trim()){ e.preventDefault(); $("nfCar").focus(); return; } nfSend("WhatsApp").catch(()=>{}); });
+$("nfVb").onclick=()=>{ if(!$("nfCar").value.trim()){ $("nfCar").focus(); return; } nfSend("Viber").catch(()=>{}); const t=nfText(); try{ navigator.clipboard.writeText(t); }catch(e){} $("nfOk").hidden=false; location.href=`viber://chat?number=%2B${PHONE.replace(/\D/g,"")}`; };
 $("copy").onclick=()=>{
   const t=$("msg").textContent;
   try{navigator.clipboard.writeText(t).then(()=>{$("copied").hidden=false;},selectMsg);}catch(e){selectMsg();}
